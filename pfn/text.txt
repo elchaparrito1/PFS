@@ -1,0 +1,115 @@
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts
+//     const [bundesData, dooData, foData, fantasyData] = await Promise.all([
+//     fetch(`http://nextjs.local/wp-json/wp/v2/posts/?categories=9&per_page=30`).then(r => r.json()),
+//     fetch(`http://nextjs.local/wp-json/wp/v2/posts/?categories=12&per_page=30`).then(r => r.json()),
+//     fetch(`http://nextjs.local/wp-json/wp/v2/posts/?categories=11&per_page=30`).then(r => r.json()),
+//     fetch(`http://nextjs.local/wp-json/wp/v2/posts/?categories=13&per_page=30`).then(r => r.json()),
+//   ]);
+  
+//   return {
+//     props: {
+//       bundesData,
+//       dooData,
+//       foData, 
+//       fantasyData
+//     },
+//   }
+// }
+
+// import React from 'react';
+// import Section from '../components/Section';
+
+// const DomesticClubCompetitions = (props) => {
+//   return (
+//     <>
+//       <Section title={<div className="title">Domestic Club Competitions</div>} section={
+//         <div className="grid-container">
+//           {props.dooData.map((post) => (
+//             <div className="grid-item" key={post.id}>
+//                     <a
+//                       target="_blank"
+//                       rel="noopener noreferrer" 
+//                       alt={`Link to ${post.acf.title} homepage`} 
+//                       href={post.acf.url} >
+//                             <div className="neumorphic button_slide slide_right">
+//                         <button className="variation2 " tabIndex="-1">
+//                           {post.acf.title}
+//                         </button>
+//                 </div>
+//                     </a>
+//             </div>
+//           ))}
+//         </div>
+//       } />
+
+// <style jsx>{`
+
+//     .title {
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       margin-right: -50%;
+//       transform: translate(-50%, -50%)
+//     }
+
+//     .neumorphic {
+//       box-shadow: inset 5px 5px 5px #cbced1,
+//                   inset -5px -5px 5px #ffffff;
+//       width: 200px;
+//       height: 50px;
+//       border-radius: 10px;
+//       overflow: hidden;
+//       position: relative;
+//       cursor: pointer;
+//     }
+
+//     .variation2 {
+//       font-family: 'Do Hyeon', sans-serif;
+//       color: gray;
+//       cursor: pointer;
+//       border: none;
+//       border-radius: 40px;
+//       background-color: transparent;
+//       font-size: 1rem;
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//     }
+
+//     .grid-container {
+//       display: grid;
+//       grid-template-columns: auto;
+//       grid-gap: 15px;
+//       justify-items: center;
+//       align-items: center;
+//     }
+
+//     .grid-item {
+//       text-align: center;
+//     }
+
+//     .button_slide {
+//       -webkit-transition: ease-out 0.8s;
+//       -moz-transition: ease-out 0.8s;
+//       transition: ease-out 0.8s;
+//     }
+
+//     .slide_right:hover {
+//       box-shadow: inset 400px 0 0 0 #24cfaa;
+//     }
+
+//     .slide_right:hover .variation2 {
+//       color: black;
+//       -webkit-transition: ease-out 0.8s;
+//       -moz-transition: ease-out 0.8s;
+//       transition: ease-out 0.8s;
+//     }
+ 
+//     `}</style> 
+//     </>
+//   )
+// }
+
+// export default DomesticClubCompetitions;
