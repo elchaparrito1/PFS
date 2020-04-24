@@ -6,7 +6,7 @@ export default css.global`
     }
     
     body {
-      padding: 10px;
+      margin: 0;
       background: #ecf0f3;
       font-family: 'Do Hyeon', sans-serif;
     }
@@ -27,10 +27,5 @@ export default css.global`
       background: grey;
       margin-bottom: 30px;
     }
-`
 
-// display: flex;
-//       flex-flow: row wrap;
-//       justify-content: space-between;
-//       align-items: flex-start;
-//       align-content: center;
+`

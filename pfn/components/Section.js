@@ -14,7 +14,7 @@ const Section = (props) => (
                         alt={`Link to ${post.acf.title} homepage`} 
                         href={post.acf.url} >
                               <div className="neumorphic button_slide slide_right">
-                          <button className="variation2 " tabIndex="-1">
+                          <button className="variation2" tabIndex="-1">
                             {post.acf.title}
                           </button>
                   </div>

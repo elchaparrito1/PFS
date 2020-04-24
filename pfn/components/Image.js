@@ -12,7 +12,7 @@ const Image = (props) => {
             <div className="grid-item">
               <img 
                   className="images"
-                  srcset={`${pic.sm} 640w, 
+                  srcSet={`${pic.sm} 640w, 
                             ${pic.md} 768w, 
                             ${pic.lg} 1024w,
                             ${pic.lg} 1366w`} 

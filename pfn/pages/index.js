@@ -1,5 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
+import Navbar from '../components/NavBar';
 import Layout from '../components/Layout';
 import Img from '../components/Image';
 import Masonry from 'react-masonry-css';
@@ -79,12 +80,16 @@ const breakpointColumnsObj = {
   return (
     <>
       <Layout>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column">
-            {Sections}
-        </Masonry>
+        {/* <Navbar /> */}
+        <Navbar />
+          <div style={{paddingTop: "50px", marginLeft: "5%", marginRight: "5%"}}>
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column">
+                {Sections}
+            </Masonry>
+          </div>
       </Layout>
     </>
   )
