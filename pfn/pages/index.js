@@ -5,6 +5,8 @@ import Layout from '../components/Layout';
 import Img from '../components/Image';
 import Masonry from 'react-masonry-css';
 import Section from '../components/Section';
+import Head from 'next/head';
+import '../public/navstyles.css';
 
 const Home = ({posts}) => {
 
@@ -63,9 +65,10 @@ const Sections = [];
 
 //For of loop to iterate over array of JSON, and put data into partial JSX components
 for (const obj of arrayObject) {
+  
   {obj.name === 'Image' ? 
-    Sections.push(<Img data={filterImages(posts, obj.number)}/>) : 
-    Sections.push(<Section title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
+    Sections.push(<Img key={obj.number} data={filterImages(posts, obj.number)}/>) : 
+    Sections.push(<Section key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
   }
 }
 
@@ -79,10 +82,14 @@ const breakpointColumnsObj = {
 
   return (
     <>
+      <Head>
+        <meta charSet="utf-8"></meta>
+        <title>Pace News</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Layout>
-        {/* <Navbar /> */}
         <Navbar />
-          <div style={{paddingTop: "50px", marginLeft: "5%", marginRight: "5%"}}>
+          <div style={{paddingTop: "150px", marginLeft: "5%", marginRight: "5%"}}>
             <Masonry
               breakpointCols={breakpointColumnsObj}
               className="my-masonry-grid"
@@ -96,7 +103,7 @@ const breakpointColumnsObj = {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://nextjs.local/wp-json/wp/v2/posts/?per_page=100');
+  const res = await fetch('http://pfn-nextjs.flywheelsites.com/wp-json/wp/v2/posts/?per_page=100');
   const posts = await res.json();
 
   // console.log(posts);

@@ -9,17 +9,14 @@
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "framer-motion": "^1.10.3",
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.3.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
-    "react-imgix": "^9.0.2",
     "react-masonry-css": "^1.0.14",
-    "react-transition-group": "^4.3.0",
-    "styled-components": "^5.0.1"
+    "react-transition-group": "^4.3.0"
   },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7"
-  }
+  "devDependencies": {}
 }

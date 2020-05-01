@@ -29,7 +29,7 @@ const Section = (props) => (
             .content-div {
               align-self: start;
               padding: 60px 35px 35px 35px;
-              border-radius: 10px;
+              border-radius: 5px;
               background: #ecf0f3;
               box-shadow: 13px 13px 20px #cbced1,
                           -13px -13px 20px #ffffff;
@@ -37,7 +37,7 @@ const Section = (props) => (
 
             .title {
               position: relative;
-              border-radius: 10px;
+              border-radius: 5px;
               text-align: center;
               font-size: 20px;
               padding: 10px;
@@ -59,7 +59,7 @@ const Section = (props) => (
                           inset -5px -5px 5px #ffffff;
               width: 200px;
               height: 50px;
-              border-radius: 10px;
+              border-radius: 5px;
               overflow: hidden;
               position: relative;
               cursor: pointer;
@@ -70,7 +70,7 @@ const Section = (props) => (
               color: gray;
               cursor: pointer;
               border: none;
-              border-radius: 10px;
+              border-radius: 5px;
               background-color: transparent;
               font-size: 1rem;
               position: absolute;

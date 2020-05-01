@@ -11,6 +11,7 @@ const Image = (props) => {
           <div className="grid-container">
             <div className="grid-item">
               <img 
+                  key={props.data[0].id}
                   className="images"
                   srcSet={`${pic.sm} 640w, 
                             ${pic.md} 768w, 
