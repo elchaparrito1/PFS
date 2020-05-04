@@ -103,7 +103,12 @@ const breakpointColumnsObj = {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://pfn-nextjs.flywheelsites.com/wp-json/wp/v2/posts/?per_page=100');
+  const res = process.env.NODE_ENV == 'development' 
+    ? 
+    await fetch('http://nextjs.local/wp-json/wp/v2/posts/?per_page=100')
+    : 
+    await fetch('https://pfn-nextjs.flywheelsites.com/wp-json/wp/v2/posts/?per_page=100');
+
   const posts = await res.json();
 
   // console.log(posts);
