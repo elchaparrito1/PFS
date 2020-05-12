@@ -7,10 +7,11 @@ import Masonry from 'react-masonry-css';
 import Section from '../components/Section';
 import Head from 'next/head';
 import '../public/navstyles.css';
+import TopNews from '../components/TopNews';
 
 const Home = ({posts}) => {
 
-const arrayObject = [
+const sectionsArrayObject = [
   {
     name: 'Football Organizations',
     id: '11'
@@ -45,7 +46,6 @@ const arrayObject = [
   },
 ]
 
-
 //Function to filter links into each one's assigned grouping 
 const filterLinks = (data, val) => {
   let result = data.filter(post => post.categories == val);
@@ -60,15 +60,18 @@ const filterImages = (data, val) => {
   return result;
 }
 
-//Sections array that gets JSX partials pushed to it from the filter functions
-const Sections = [];
+//Variable containing filter data for top news posts
+const topNews = posts.filter(post => post.categories == '6');
 
-//For of loop to iterate over array of JSON, and put data into partial JSX components
-for (const obj of arrayObject) {
+//Sections array that gets JSX partials pushed to it from the filter functions
+const sections = [];
+
+//For/of loop to iterate over array of JSON data, and put data into partial JSX components
+for (const obj of sectionsArrayObject) {
   
   {obj.name === 'Image' ? 
-    Sections.push(<Img key={obj.number} data={filterImages(posts, obj.number)}/>) : 
-    Sections.push(<Section key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
+    sections.push(<Img key={obj.number} data={filterImages(posts, obj.number)}/>) : 
+    sections.push(<Section key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
   }
 }
 
@@ -89,15 +92,43 @@ const breakpointColumnsObj = {
       </Head>
       <Layout>
         <Navbar />
-          <div style={{paddingTop: "150px", marginLeft: "5%", marginRight: "5%"}}>
+          <div className="news-wrapper">
+            <TopNews data={topNews}/>
+          </div>
+          <div className="section-wrapper">
             <Masonry
               breakpointCols={breakpointColumnsObj}
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column">
-                {Sections}
+                {sections}
             </Masonry>
           </div>
       </Layout>
+      <style>{`
+        .news-wrapper {
+          padding-top: 100px; 
+          margin-left: 3%; 
+          margin-right: 3%;
+        }
+
+        .section-wrapper {
+          padding-top: 100px; 
+          margin-left: 3%; 
+          margin-right: 3%;
+        }
+
+        @media only screen and (min-width: 1500px) {
+          .news-wrapper {
+            margin-left: 15%; 
+            margin-right: 15%;
+          }
+
+          .section-wrapper {
+            margin-left: 10%; 
+            margin-right: 10%;
+          }
+        }
+      `}</style>
     </>
   )
 }

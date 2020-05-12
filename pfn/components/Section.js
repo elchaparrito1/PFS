@@ -1,59 +1,27 @@
 import React from 'react';
+import Container from '../components/Container';
 
 const Section = (props) => (
   <>
-    <div className="content-div">
-      <div className="title">{props.title}</div>
-        <div className="fields">
-          <div className="grid-container">
-            {props.data.map((post) => (
-              <div className="grid-item" key={post.id}>
-                      <a 
-                        target="_blank"
-                        rel="noopener noreferrer" 
-                        alt={`Link to ${post.acf.title} homepage`} 
-                        href={post.acf.url} >
-                              <div className="neumorphic button_slide slide_right">
-                          <button className="variation2" tabIndex="-1">
-                            {post.acf.title}
-                          </button>
-                  </div>
-                      </a>
-              </div>
-            ))}
-          </div>
+    <Container title={props.title}>
+      {props.data.map((post) => (
+        <div className="grid-item" key={post.id}>
+                <a 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  alt={`Link to ${post.acf.title} homepage`} 
+                  href={post.acf.url} >
+                        <div className="neumorphic button_slide slide_right">
+                    <button className="variation2" tabIndex="-1">
+                      {post.acf.title}
+                    </button>
+            </div>
+                </a>
         </div>
-    </div>
+      ))}
+    </Container>
 
     <style jsx>{`
-            .content-div {
-              align-self: start;
-              padding: 60px 35px 35px 35px;
-              border-radius: 5px;
-              background: #ecf0f3;
-              box-shadow: 13px 13px 20px #cbced1,
-                          -13px -13px 20px #ffffff;
-            }
-
-            .title {
-              position: relative;
-              border-radius: 5px;
-              text-align: center;
-              font-size: 20px;
-              padding: 10px;
-              letter-spacing: 0.5px;
-              background: #014899;
-              box-shadow: 3px 3px 8px #b1b1b1,
-                          -3px -3px 8px #ffffff;
-              transition: 0.5s;
-              color: white;
-            }
-
-            .fields {
-              width: 100%;
-              padding: 50px 5px 5px 5px;
-            }
-        
             .neumorphic {
               box-shadow: inset 5px 5px 5px #cbced1,
                           inset -5px -5px 5px #ffffff;
@@ -79,14 +47,6 @@ const Section = (props) => (
               transform: translate(-50%, -50%);
             }
         
-            .grid-container {
-              display: grid;
-              grid-template-columns: auto;
-              grid-gap: 15px;
-              justify-items: center;
-              align-items: center;
-            }
-        
             .grid-item {
               text-align: center;
             }
@@ -106,16 +66,6 @@ const Section = (props) => (
               -webkit-transition: ease-out 0.8s;
               -moz-transition: ease-out 0.8s;
               transition: ease-out 0.8s;
-            }
-
-            @media only screen and (min-width: 1500px) {
-              .grid-container {
-                display: grid;
-                grid-template-columns: auto auto;
-                grid-gap: 15px;
-                justify-items: center;
-                align-items: center;
-              }
             }
     `}</style> 
   </>
