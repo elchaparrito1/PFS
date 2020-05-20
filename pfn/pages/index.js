@@ -106,7 +106,7 @@ const breakpointColumnsObj = {
       </Layout>
       <style>{`
         .news-wrapper {
-          padding-top: 100px; 
+          padding-top: 200px; 
           margin-left: 3%; 
           margin-right: 3%;
         }

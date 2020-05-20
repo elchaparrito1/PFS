@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
+
 /* NavBar.jsx */
 const NavBar = () => {
   const [notScrolled, setScrolled] = useState(true);
@@ -11,22 +12,33 @@ const NavBar = () => {
   }
 
   useEffect(() => {
+    const abortController = new AbortController();
     const watchScroll = () => {
-      document.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll);
     }
     watchScroll();
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handleScroll);
+      abortController.abort();
     }
   });
   
-    const menu = ['Leagues','World Cup News','Shop','Tables','Players']
-    const menuItems = menu.map((val, index)=>{
+    const menu = [
+      {title: 'Leagues', link: 'Bundesliga'}, 
+      {title: 'World Cup News', link: 'Football Organizations'}, 
+      {title: 'Shop', link: 'Domestic Club Competitions'}, 
+      {title: 'Tables', link: 'Fantasy Leagues'}, 
+      {title: 'Players', link: ''}
+    ]
+    const menuItems = menu.map((val, index) => {
       return (
         <MenuItem 
           key={index} 
+          value={val.link}
           delay={`${index * 0.2}s`} 
-          onClick={() => setMenuOpen(false)}>{val}</MenuItem>)
+          onClick={() => setMenuOpen(false)}>{val.title}
+        </MenuItem>
+        )
     });
     
     return(
@@ -41,9 +53,11 @@ const NavBar = () => {
                   <div className="media-button-line line-middle" style={open ? {opacity: 0, transform: 'translateX(-16px)'} : {opacity: 1, transform: 'none'}}/>
                   <div className="media-button-line line-bottom" style={open ? {transform: 'translate(3px) rotate(-45deg)'} : {transform: 'none'}}/>
             </div>
-            <div className="logo">Logo</div>
+            <div className="logo">
+              <img src="/pfn_transparent.png" alt="company logo" style={{width: "350px"}} />
+            </div>
           </div>
-          <div className="menu-container" style={open ? {height: '390px'} : {height: '0'}}>
+          <div className="menu-container" style={open ? {height: '500px'} : {height: '0'}}>
           {
             open 
               ?
@@ -66,9 +80,11 @@ const NavBar = () => {
                   <div className="media-button-line line-middle-scroll" style={open ? {opacity: 0, transform: 'translateX(-16px)'} : {opacity: 1, transform: 'none'}}/>
                   <div className="media-button-line line-bottom-scroll" style={open ? {transform: 'translate(3px) rotate(-45deg)'} : {transform: 'none'}}/>
             </div>
-            <div className="logo">Logo</div>
+            <div style={{margin: "0 auto"}}>
+              <img src="/pfn-logo.png" alt="company logo" style={{width: "350px"}} />
+            </div>
           </div>
-          <div className="menu-container-scroll" style={open ? {height: '390px'} : {height: '0'}}>
+          <div className="menu-container-scroll" style={open ? {height: '500px'} : {height: '0'}}>
           {
             open 
               ?
@@ -94,12 +110,14 @@ const MenuItem = (props) => {
         <div className="menu-item-container" style={{animationDelay: `${props.delay}`}}>
           <div 
             className="menu-item"
-            style={hover ? {color: 'gray', animationDelay: `${props.delay}`} : {color: '#fafafa', animationDelay: `${props.delay}`}}
+            style={hover ? {color: 'white', animationDelay: `${props.delay}`} : {color: '#fafafa', animationDelay: `${props.delay}`}}
             onMouseEnter={() => setHover(!hover)} 
             onMouseLeave={() => setHover(!hover)}
             onClick={props.onClick}
           >
+            {/* <a href={`#${props.value}`}> */}
               {props.children}  
+            {/* </a> */}
             </div>
           <div className="line" style={{animationDelay: `${props.delay}`}}/>
         </div> 
@@ -107,3 +125,4 @@ const MenuItem = (props) => {
 }
 
 export default NavBar;
+

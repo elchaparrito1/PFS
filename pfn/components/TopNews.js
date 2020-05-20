@@ -2,185 +2,102 @@ import React from 'react';
 
 const TopNews = (props) => {
 
-  const testData = [
-    {
-      id: 1,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 2,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 3,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 4,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 5,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    },
-    {
-      id: 6,
-      title: "Fate of the European Super League will define the future of football",
-      url: "www.google.com",
-    }
-  ]
-
-console.log(props);
-
 return (
     <>
       <div className="content-div">
-        <div className="title">Top News</div>
+        <div className="title">Latest News</div>
           <div className="fields">
             <div className='grid-container'>
               <div className="main neumorphic">
-                <div className="container">
-                    <img src="https://res.cloudinary.com/dzj8uhlzg/image/upload/c_scale,q_auto:best,w_1024/v1586802116/sample.jpg" 
-                    alt="Snow" 
-                    style={{width: "100%", borderRadius: "5px", verticalAlign: "middle"}} 
-                    />
-                    <div className="centered">UK government to allow Premier League restart on June 12 but so many questions still need answers</div>
+                    <a 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      alt={`Link to homepage`} 
+                      href={props.data[0].acf.link} >
+                        <div className="container">
+                          <img src={props.data[0].acf.image}
+                            alt="News feed image" 
+                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
+                          />
+                          <div className="headline">{props.data[0].acf.headline}</div>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                <div className="feed-neumorphic">
-                  <div className="link-grid-container">
-                    <div className="feed">Feed</div>
-                      {testData.map((post) => (
-                        <div className="grid-item" key={post.id}>
-                          <a 
-                            target="_blank"
-                            rel="noopener noreferrer" 
-                            alt={`Link to homepage`} 
-                            href={post.url} >
-                              <div className="link-neumorphic button_slide slide_right">
-                                <button className="variation2" tabIndex="-1">
-                                  {post.title}
-                                </button>
-                              </div>
-                          </a>
+                  <div className="feed-neumorphic">
+                    <div className="link-grid-container">
+                      <div className="feed">Feed</div>
+                        {props.data.slice(4).map((post) => (
+                          <div className="grid-item" key={post.id}>
+                            <a 
+                              target="_blank"
+                              rel="noopener noreferrer" 
+                              alt={`Link to homepage`} 
+                              href={post.acf.link} >
+                                <div className="link-neumorphic">
+                                  <button className="variation2" tabIndex="-1">
+                                    {post.acf.headline}
+                                  </button>
+                                </div>
+                            </a>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                  <div className="second neumorphic">
+                    <a 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      alt={`Link to homepage`} 
+                      href={props.data[1].acf.link} >
+                        <div className="container">
+                          <img src={props.data[1].acf.image}
+                            alt="News feed image" 
+                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
+                            />
+                          <div className="headline">{props.data[1].acf.headline}</div>
                         </div>
-                      ))}
+                    </a>
                   </div>
-                </div>
-                <div className="second neumorphic">
-                  <div className="container">
-                    <img src="https://res.cloudinary.com/dzj8uhlzg/image/upload/c_scale,q_auto:best,w_1024/v1586802116/sample.jpg" 
-                    alt="Snow" 
-                    style={{width: "100%", borderRadius: "5px", verticalAlign: "middle"}} 
-                    />
-                    <div className="centered">UK government to allow Premier League restart on June 12 but so many questions still need answers</div>
+                  <div className="third neumorphic">
+                    <a 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      alt={`Link to homepage`} 
+                      href={props.data[2].acf.link} >
+                        <div className="container">
+                          <img src={props.data[2].acf.image}
+                            alt="News feed image" 
+                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                          />
+                          <div className="headline">{props.data[2].acf.headline}</div>
+                        </div>
+                    </a>
                   </div>
-                </div>
-                <div className="third neumorphic">
-                  <div className="container">
-                    <img src="https://res.cloudinary.com/dzj8uhlzg/image/upload/c_scale,q_auto:best,w_1024/v1586802116/sample.jpg" 
-                    alt="Snow" 
-                    style={{width: "100%", borderRadius: "5px", verticalAlign: "middle"}} 
-                    />
-                    <div className="centered">UK government to allow Premier League restart on June 12 but so many questions still need answers</div>
+                  <div className="fourth neumorphic">
+                    <a 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      alt={`Link to homepage`} 
+                      href={props.data[3].acf.link} >
+                        <div className="container">
+                          <img src={props.data[3].acf.image}
+                            alt="News feed image" 
+                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                          />
+                          <div className="headline">{props.data[3].acf.headline}</div>
+                        </div>
+                    </a>
                   </div>
-                </div>
-                <div className="fourth neumorphic">
-                  <div className="container">
-                    <img src="https://res.cloudinary.com/dzj8uhlzg/image/upload/c_scale,q_auto:best,w_1024/v1586802116/sample.jpg" 
-                    alt="Snow" 
-                    style={{width: "100%", borderRadius: "5px", verticalAlign: "middle"}} 
-                    />
-                    <div className="centered">UK government to allow Premier League restart on June 12 but so many questions still need answers</div>
-                  </div>
-                </div>
-                <div className="fifth neumorphic">
-                  <div className="container">
-                    <img src="https://res.cloudinary.com/dzj8uhlzg/image/upload/c_scale,q_auto:best,w_1024/v1586802116/sample.jpg" 
-                    alt="Snow" 
-                    style={{width: "100%", borderRadius: "5px", verticalAlign: "middle"}} 
-                    />
-                    <div className="centered">UK government to allow Premier League restart on June 12 but so many questions still need answers</div>
-                  </div>
-                </div>
-                <div className="sixth neumorphic">
-                  <div className="container">
-                    <img src="https://res.cloudinary.com/dzj8uhlzg/image/upload/c_scale,q_auto:best,w_1024/v1586802116/sample.jpg" 
-                    alt="Snow" 
-                    style={{width: "100%", borderRadius: "5px", verticalAlign: "middle"}} 
-                    />
-                    <div className="centered">UK government to allow Premier League restart on June 12 but so many questions still need answers</div>
-                  </div>
-                </div>
-                <div className="seventh neumorphic">
-                  <div className="container">
-                    <img src="https://res.cloudinary.com/dzj8uhlzg/image/upload/c_scale,q_auto:best,w_1024/v1586802116/sample.jpg" 
-                    alt="Snow" 
-                    style={{width: "100%", borderRadius: "5px", verticalAlign: "middle"}} 
-                    />
-                    <div className="centered">UK government to allow Premier League restart on June 12 but so many questions still need answers</div>
-                  </div>
-                </div>
             </div>
         </div>
       </div>
               
       <style jsx>{`
+
+              button {
+                outline: none;
+              }
+
               .content-div {
                 align-self: start;
                 padding: 30px 30px 30px 30px;
@@ -209,36 +126,49 @@ return (
             
               .fields {
                 width: 100%;
-                padding: 50px 5px 5px 5px;
+                padding: 30px 5px 5px 5px;
               }
 
               .grid-container {
                 display: grid;
                 grid-template-columns: repeat(3, minmax(auto, 1fr));
                 grid-template-rows: repeat(auto, 1fr);
-                grid-gap: 1.5rem;
+                grid-gap: 2rem;
                 
               }
-               
-              .container img {
-                vertical-align: middle;
-              }
 
-              .centered {
+              .headline {
                 position: absolute;
-                top: 80%;
+                top: 70%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 background: rgba(0, 0, 0, 0.5);
-                padding: 3px;
-                width: 80%;
+                padding: 5px;
+                width: 100%;
+                font-size: 1vw;
+                text-overflow: hidden;
               }
 
               .container {
                 position: relative;
                 text-align: left;
                 color: white;
-                padding: 15px;
+                height: 100%;
+              }
+
+              .container img {
+                vertical-align: middle;
+                transition: all 0.3s ease-in-out 0s;
+                -moz-transition: all 0.3s ease-in-out 0s;
+                -webkit-transition: all 0.3s ease-in-out 0s;
+                -o-transition: all 0.3s ease-in-out 0s;
+              }
+
+              .container:hover img {
+                transform: scale(1.04);
+                -moz-transform: scale(1.04);
+                -webkit-transform: scale(1.04);
+                -o-transform: scale(1.04);
               }
               
               .content {
@@ -280,9 +210,8 @@ return (
               }
             
               .second { 
-                grid-column: 1 ;
+                grid-column: 1;
                 grid-row: auto;
-                overflow: hidden;
               }
             
               .third {  
@@ -299,7 +228,7 @@ return (
                 grid-column: 1;
                 grid-row: auto;
               }
-
+              
               .sixth {  
                 grid-column: 2;
                 grid-row: auto;
@@ -324,6 +253,18 @@ return (
                 overflow: hidden;
                 position: relative;
                 cursor: pointer;
+
+                transition: all 0.3s ease-in-out 0s;
+                -moz-transition: all 0.3s ease-in-out 0s;
+                -webkit-transition: all 0.3s ease-in-out 0s;
+                -o-transition: all 0.3s ease-in-out 0s;
+              }
+
+              .link-neumorphic:hover {
+                transform: scale(1.07);
+                -moz-transform: scale(1.07);
+                -webkit-transform: scale(1.07);
+                -o-transform: scale(1.07);
               }
 
               .variation2 {
@@ -340,38 +281,12 @@ return (
                 transform: translate(-50%, -50%);
               }
 
-
-              .button_slide {
-                -webkit-transition: ease-out 0.8s;
-                -moz-transition: ease-out 0.8s;
-                transition: ease-out 0.8s;
-              }
-          
-              .slide_right:hover {
-                box-shadow: inset 400px 0 0 0 #014899;
-              }
-          
-              .slide_right:hover .variation2 {
-                color: white;
-                -webkit-transition: ease-out 0.8s;
-                -moz-transition: ease-out 0.8s;
-                transition: ease-out 0.8s;
-              }
-
               .neumorphic {
                 border-radius: 5px;
                 background: #ecf0f3;
-                box-shadow: inset 5px 5px 5px #cbced1,
-                          inset -5px -5px 5px #ffffff;
-                transition: all 0.5s ease-in-out;
-              }
-
-              .neumorphic:hover {
-                  border-radius: 5px;
-                  background: #014899;
-                  box-shadow: 13px 13px 20px #cbced1,
+                box-shadow: 13px 13px 20px #cbced1,
                               -13px -13px 20px #ffffff;
-                  cursor: pointer;
+                transition: all 0.5s ease-in-out;
               }
             
               @media only screen and (min-width: 1500px) {

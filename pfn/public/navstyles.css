@@ -111,7 +111,7 @@
   opacity: 1;
   display: flex;
   align-items:center;
-  background: #131419;
+  background: gray;
   color: white;
   padding: 10px 15px;
   width: 100%;
@@ -141,7 +141,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #131419;
+  background: gray;
   opacity: 1;
   color: #fafafa;
   transition: height 0.3s ease;
@@ -168,10 +168,14 @@
 
 .logo {
   margin: 0 auto;
+  box-shadow: inset 5px 5px 5px #cbced1,
+  inset -5px -5px 5px #ffffff;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .menu-list {
-  padding-top: 4rem;
+  padding-top: 11rem;
 }
 
 .menu-item-container {
@@ -181,17 +185,29 @@
 
 .menu-item {
   font-size: 1.2rem;
+  line-height: 20px;
   padding: 1rem 0;
   margin: 0 5%;
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   animation: 0.5s slideIn forwards;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+}
+
+.menu-item:hover {
+  font-size: 1.4rem;
+  transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
 }
 
 .line {
   width: 90%;
   height: 1px;
-  background: gray;
+  background: white;
   margin: 0 auto;
   animation: 0.5s shrink forwards;
 }
