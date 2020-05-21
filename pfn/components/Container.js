@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Container = (props) => {
-console.log(props.title);
+
 return (
   <>
     <div className="content-div">
-      <div id={props.title} className="title">{props.title}</div>
+      <div className="title">{props.title}</div>
         <div className="fields">
           <div className="grid-container">
             {props.children}

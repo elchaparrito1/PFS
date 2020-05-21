@@ -23,20 +23,13 @@ const NavBar = () => {
     }
   });
   
-    const menu = [
-      {title: 'Leagues', link: 'Bundesliga'}, 
-      {title: 'World Cup News', link: 'Football Organizations'}, 
-      {title: 'Shop', link: 'Domestic Club Competitions'}, 
-      {title: 'Tables', link: 'Fantasy Leagues'}, 
-      {title: 'Players', link: ''}
-    ]
-    const menuItems = menu.map((val, index) => {
+    const menu = ['Leagues','World Cup News','Shop','Tables','Players']
+    const menuItems = menu.map((val, index)=>{
       return (
         <MenuItem 
           key={index} 
-          value={val.link}
           delay={`${index * 0.2}s`} 
-          onClick={() => setMenuOpen(false)}>{val.title}
+          onClick={() => setMenuOpen(false)}>{val}
         </MenuItem>
         )
     });
@@ -115,9 +108,7 @@ const MenuItem = (props) => {
             onMouseLeave={() => setHover(!hover)}
             onClick={props.onClick}
           >
-            {/* <a href={`#${props.value}`}> */}
               {props.children}  
-            {/* </a> */}
             </div>
           <div className="line" style={{animationDelay: `${props.delay}`}}/>
         </div> 

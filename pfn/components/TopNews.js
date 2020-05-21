@@ -145,7 +145,7 @@ return (
                 background: rgba(0, 0, 0, 0.5);
                 padding: 5px;
                 width: 100%;
-                font-size: 1vw;
+                font-size: 1.2vw;
                 text-overflow: hidden;
               }
 
