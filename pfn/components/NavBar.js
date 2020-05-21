@@ -8,17 +8,17 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   const handleScroll = () => {
-      setScrolled(window.pageYOffset < 20 ? true : false);
+      setScrolled(window.scrollY < 20 ? true : false);
   }
 
   useEffect(() => {
     const abortController = new AbortController();
     const watchScroll = () => {
-      window.addEventListener('scroll', handleScroll);
+      document.addEventListener('scroll', handleScroll);
     }
     watchScroll();
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('scroll', handleScroll);
       abortController.abort();
     }
   });
