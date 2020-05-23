@@ -21,6 +21,8 @@ return (
               background: #ecf0f3;
               box-shadow: 13px 13px 20px #cbced1,
                           -13px -13px 20px #ffffff;
+              margin: 0 auto;
+              margin-bottom: 50px;
             }
 
             .title {
@@ -52,6 +54,19 @@ return (
                 grid-gap: 15px;
                 justify-items: center;
                 align-items: center;
+              }
+            }
+
+            @media only screen and (max-width: 1024px) {
+              .content-div {
+                align-self: start;
+                padding: 10px 5px 5px 5px;
+                border-radius: 5px;
+                margin: 0 auto;
+              }
+
+              .title {
+                font-size: 15px;
               }
             }
     `}</style> 

@@ -47,7 +47,7 @@ const NavBar = () => {
                   <div className="media-button-line line-bottom" style={open ? {transform: 'translate(3px) rotate(-45deg)'} : {transform: 'none'}}/>
             </div>
             <div className="logo">
-              <img src="/pfn_transparent.png" alt="company logo" className="logo-img" />
+              <img src="/pfn_transparent.png" alt="company logo" className=" not-scrolled logo-img" />
             </div>
           </div>
           <div className="menu-container" style={open ? {height: '500px'} : {height: '0'}}>
@@ -74,7 +74,7 @@ const NavBar = () => {
                   <div className="media-button-line line-bottom-scroll" style={open ? {transform: 'translate(3px) rotate(-45deg)'} : {transform: 'none'}}/>
             </div>
             <div style={{margin: "0 auto"}}>
-              <img src="/pfn-logo.png" alt="company logo" className="logo-img" />
+              <img src="/pfn-logo.png" alt="company logo" className="scrolled logo-img" />
             </div>
           </div>
           <div className="menu-container-scroll" style={open ? {height: '500px'} : {height: '0'}}>

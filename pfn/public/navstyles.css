@@ -1,20 +1,22 @@
 .bod {
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 10vh;
   transition: filter 0.5s ease;
-  z-index: 99;
-  position: fixed;
+  z-index: 9000;
   opacity: 2;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  
 }
 
 /*Styling prior to scroll*/
@@ -174,8 +176,12 @@
   border-radius: 5px;
 }
 
-.logo-img {
-  width: 350px;
+.not-scrolled {
+    width: 280px;
+}
+
+.scrolled {
+  width: 200px;
 }
 
 .menu-list {
@@ -245,7 +251,7 @@
 
 @media only screen and (max-width: 1024px) {
   .logo-img {
-    width: 200px;
+    width: 150px;
   }
 }
 

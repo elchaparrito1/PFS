@@ -31,7 +31,7 @@ const Image = (props) => {
               align-self: start;
               padding: 35px 35px 35px 35px;
               border-radius: 10px;
-              background: #ecf0f3;
+              background: none;
             }
 
             .fields {

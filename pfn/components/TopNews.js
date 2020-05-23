@@ -5,7 +5,7 @@ const TopNews = (props) => {
 return (
     <>
       <div className="content-div">
-        <div className="title">Latest News</div>
+        <div className="title">News</div>
           <div className="fields">
             <div className='grid-container'>
               <div className="main neumorphic">
@@ -17,16 +17,16 @@ return (
                         <div className="container">
                           <img src={props.data[0].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
+                            style={{width: "650px", height: "450px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
                           />
-                          <div className="headline">{props.data[0].acf.headline}</div>
+                          <p className="headline">{props.data[0].acf.headline}</p>
                       </div>
                     </a>
                   </div>
                   <div className="feed-neumorphic">
                     <div className="link-grid-container">
                       <div className="feed">Feed</div>
-                        {props.data.slice(4).map((post) => (
+                        {props.data.slice(7).map((post) => (
                           <div className="grid-item" key={post.id}>
                             <a 
                               target="_blank"
@@ -52,9 +52,9 @@ return (
                         <div className="container">
                           <img src={props.data[1].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
+                            style={{width: "100%", height: "250px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
                             />
-                          <div className="headline">{props.data[1].acf.headline}</div>
+                          <p className="headline">{props.data[1].acf.headline}</p>
                         </div>
                     </a>
                   </div>
@@ -67,9 +67,9 @@ return (
                         <div className="container">
                           <img src={props.data[2].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                            style={{width: "100%", height: "250px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
                           />
-                          <div className="headline">{props.data[2].acf.headline}</div>
+                          <p className="headline">{props.data[2].acf.headline}</p>
                         </div>
                     </a>
                   </div>
@@ -82,9 +82,54 @@ return (
                         <div className="container">
                           <img src={props.data[3].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                            style={{width: "100%", height: "250px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
                           />
-                          <div className="headline">{props.data[3].acf.headline}</div>
+                          <p className="headline">{props.data[3].acf.headline}</p>
+                        </div>
+                    </a>
+                  </div>
+                  <div className="fifth neumorphic">
+                    <a 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      alt={`Link to homepage`} 
+                      href={props.data[4].acf.link} >
+                        <div className="container">
+                          <img src={props.data[4].acf.image}
+                            alt="News feed image" 
+                            style={{width: "100%", height: "250px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                          />
+                          <p className="headline">{props.data[4].acf.headline}</p>
+                        </div>
+                    </a>
+                  </div>
+                  <div className="sixth neumorphic">
+                    <a 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      alt={`Link to homepage`} 
+                      href={props.data[5].acf.link} >
+                        <div className="container">
+                          <img src={props.data[5].acf.image}
+                            alt="News feed image" 
+                            style={{width: "100%", height: "250px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                          />
+                          <p className="headline">{props.data[5].acf.headline}</p>
+                        </div>
+                    </a>
+                  </div>
+                  <div className="seventh neumorphic">
+                    <a 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      alt={`Link to homepage`} 
+                      href={props.data[6].acf.link} >
+                        <div className="container">
+                          <img src={props.data[6].acf.image}
+                            alt="News feed image" 
+                            style={{width: "100%", height: "250px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                          />
+                          <p className="headline">{props.data[6].acf.headline}</p>
                         </div>
                     </a>
                   </div>
@@ -110,7 +155,7 @@ return (
               .title {
                 position: relative;
                 text-align: center;
-                font-size: 28px;
+                font-size: 20px;
                 letter-spacing: 0.5px;
                 color: gray;
               }
@@ -118,7 +163,7 @@ return (
               .feed {
                 position: relative;
                 text-align: center;
-                font-size: 28px;
+                font-size: 20px;
                 letter-spacing: 0.5px;
                 padding: 15px;
                 color: gray;
@@ -134,7 +179,7 @@ return (
                 grid-template-columns: repeat(3, minmax(auto, 1fr));
                 grid-template-rows: repeat(auto, 1fr);
                 grid-gap: 2rem;
-                
+              
               }
 
               .headline {
@@ -185,6 +230,8 @@ return (
                 align-items: center;
                 text-align: center;
                 position: relative;
+                max-width: 650px;
+                max-height: 450px;
               }
 
               .feed-neumorphic {  
@@ -196,7 +243,7 @@ return (
                           inset -5px -5px 5px #ffffff;
                 transition: all 2s ease-in-out;
                 min-height: 150px;
-                max-height: 500px;
+                max-height: 490px;
                 overflow: scroll;
                 padding: 15px;
               }
@@ -212,31 +259,37 @@ return (
               .second { 
                 grid-column: 1;
                 grid-row: auto;
+                min-height: 250px;
               }
             
               .third {  
                 grid-column: 2;
                 grid-row: auto;
+                min-height: 250px;
               }
             
               .fourth {  
                 grid-column: 3;
                 grid-row: auto;
+                min-height: 250px;
               }
             
               .fifth {  
                 grid-column: 1;
                 grid-row: auto;
+                min-height: 250px;
               }
               
               .sixth {  
                 grid-column: 2;
                 grid-row: auto;
+                min-height: 250px;
               }
             
               .seventh {  
                 grid-column: 3;
                 grid-row: auto;
+                min-height: 250px;
               }
 
               .grid-item {
@@ -275,10 +328,9 @@ return (
                 border-radius: 5px;
                 background-color: transparent;
                 font-size: 0.8rem;
-                position: absolute;
+                position: relative;
                 top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                transform: translateY(-50%);
               }
 
               .neumorphic {
@@ -287,6 +339,85 @@ return (
                 box-shadow: 13px 13px 20px #cbced1,
                               -13px -13px 20px #ffffff;
                 transition: all 0.5s ease-in-out;
+              }
+
+              @media only screen and (max-width: 1024px) {
+                .feed-neumorphic {  
+                  min-height: 150px;
+                  max-height: 200px;
+                  min-width: 140px;
+                }
+
+                .main {  
+                  max-width: 180px;
+                  max-height: 150px;
+                }
+
+                .second { 
+                  min-width: 70px;
+                  min-height: 60px;
+                  overflow: hidden;
+                }
+              
+                .third {  
+                  min-width: 70px;
+                  min-height: 60px;
+                  overflow: hidden;
+                }
+              
+                .fourth {  
+                  max-width: 70px;
+                  min-height: 60px;
+                  overflow: hidden;
+                }
+
+                .fifth {  
+                  min-width: 70px;
+                  min-height: 60px;
+                  overflow: hidden;
+                }
+              
+                .sixth {  
+                  max-width: 70px;
+                  min-height: 60px;
+                  overflow: hidden;
+                }
+
+                .seventh {  
+                  max-width: 70px;
+                  min-height: 60px;
+                  overflow: hidden;
+                }
+
+                .headline {
+                  font-size: 1.6vw;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  padding-bottom: 0px;
+                }
+
+                .feed {
+                  font-size: 15px;
+                }
+
+                .link-neumorphic {
+                  width: 100px;
+                  height: 30px;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                }
+
+                .variation2 {
+                  font-size: 0.5rem;
+                  display: inline-block;
+                  vertical-align: middle;
+                  top: 0;
+                  transform: none;
+                }
               }
             
               @media only screen and (min-width: 1500px) {
