@@ -17,7 +17,7 @@ return (
                         <div className="container">
                           <img src={props.data[0].acf.image}
                             alt="News feed image" 
-                            style={{width: "650px", height: "450px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
+                             
                           />
                           <p className="headline">{props.data[0].acf.headline}</p>
                       </div>
@@ -52,7 +52,7 @@ return (
                         <div className="container">
                           <img src={props.data[1].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "250px", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle"}} 
+                             
                             />
                           <p className="headline">{props.data[1].acf.headline}</p>
                         </div>
@@ -67,7 +67,7 @@ return (
                         <div className="container">
                           <img src={props.data[2].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                            
                           />
                           <p className="headline">{props.data[2].acf.headline}</p>
                         </div>
@@ -82,7 +82,7 @@ return (
                         <div className="container">
                           <img src={props.data[3].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                            
                           />
                           <p className="headline">{props.data[3].acf.headline}</p>
                         </div>
@@ -97,7 +97,7 @@ return (
                         <div className="container">
                           <img src={props.data[4].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                            
                           />
                           <p className="headline">{props.data[4].acf.headline}</p>
                         </div>
@@ -112,7 +112,7 @@ return (
                         <div className="container">
                           <img src={props.data[5].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                            
                           />
                           <p className="headline">{props.data[5].acf.headline}</p>
                         </div>
@@ -127,7 +127,7 @@ return (
                         <div className="container">
                           <img src={props.data[6].acf.image}
                             alt="News feed image" 
-                            style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "5px", verticalAlign: "middle", overflow: "hidden"}} 
+                            
                           />
                           <p className="headline">{props.data[6].acf.headline}</p>
                         </div>
@@ -147,6 +147,10 @@ return (
                 width: auto;
                 max-width: 100%;
                 height: auto;
+                object-fit: cover; 
+                border-radius: 5px; 
+                vertical-align: middle;
+                overflow: "hidden"
               }
 
               .content-div {
