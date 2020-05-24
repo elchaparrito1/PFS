@@ -356,36 +356,42 @@ return (
                 .second { 
                   min-width: 70px;
                   min-height: 60px;
+                  max-height: 70px;
                   overflow: hidden;
                 }
               
                 .third {  
                   min-width: 70px;
                   min-height: 60px;
+                  max-height: 70px;
                   overflow: hidden;
                 }
               
                 .fourth {  
                   max-width: 70px;
                   min-height: 60px;
+                  max-height: 70px;
                   overflow: hidden;
                 }
 
                 .fifth {  
                   min-width: 70px;
                   min-height: 60px;
+                  max-height: 70px;
                   overflow: hidden;
                 }
               
                 .sixth {  
                   max-width: 70px;
                   min-height: 60px;
+                  max-height: 70px;
                   overflow: hidden;
                 }
 
                 .seventh {  
                   max-width: 70px;
                   min-height: 60px;
+                  max-height: 70px;
                   overflow: hidden;
                 }
 
