@@ -348,7 +348,7 @@ return (
                   min-width: 140px;
                 }
 
-                .main {  
+                .main img {  
                   max-width: 100px;
                   max-height: 100px;
                 }
