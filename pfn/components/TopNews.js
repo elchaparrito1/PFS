@@ -8,16 +8,16 @@ return (
         <div className="title">News</div>
           <div className="fields">
             <div className='grid-container'>
-              <div className="main neumorphic">
+              <div className="main">
                     <a 
                       target="_blank"
                       rel="noopener noreferrer" 
                       alt={`Link to homepage`} 
                       href={props.data[0].acf.link} >
                         <div className="container">
-                          {/* <img src={props.data[0].acf.image}
+                          <img src={props.data[0].acf.image}
                             alt="News feed image" 
-                          /> */}
+                          />
                           <p className="headline">{props.data[0].acf.headline}</p>
                       </div>
                     </a>
@@ -49,9 +49,9 @@ return (
                       alt={`Link to homepage`} 
                       href={props.data[1].acf.link} >
                         <div className="container">
-                          {/* <img src={props.data[1].acf.image}
+                          <img src={props.data[1].acf.image}
                             alt="News feed image" 
-                            /> */}
+                            />
                           <p className="headline">{props.data[1].acf.headline}</p>
                         </div>
                     </a>
@@ -63,9 +63,9 @@ return (
                       alt={`Link to homepage`} 
                       href={props.data[2].acf.link} >
                         <div className="container">
-                          {/* <img src={props.data[2].acf.image}
+                          <img src={props.data[2].acf.image}
                             alt="News feed image" 
-                          /> */}
+                          />
                           <p className="headline">{props.data[2].acf.headline}</p>
                         </div>
                     </a>
@@ -77,9 +77,9 @@ return (
                       alt={`Link to homepage`} 
                       href={props.data[3].acf.link} >
                         <div className="container">
-                          {/* <img src={props.data[3].acf.image}
+                          <img src={props.data[3].acf.image}
                             alt="News feed image" 
-                          /> */}
+                          />
                           <p className="headline">{props.data[3].acf.headline}</p>
                         </div>
                     </a>
@@ -91,9 +91,9 @@ return (
                       alt={`Link to homepage`} 
                       href={props.data[4].acf.link} >
                         <div className="container">
-                          {/* <img src={props.data[4].acf.image}
+                          <img src={props.data[4].acf.image}
                             alt="News feed image" 
-                          /> */}
+                          />
                           <p className="headline">{props.data[4].acf.headline}</p>
                         </div>
                     </a>
@@ -105,9 +105,9 @@ return (
                       alt={`Link to homepage`} 
                       href={props.data[5].acf.link} >
                         <div className="container">
-                          {/* <img src={props.data[5].acf.image}
+                          <img src={props.data[5].acf.image}
                             alt="News feed image" 
-                          /> */}
+                          />
                           <p className="headline">{props.data[5].acf.headline}</p>
                         </div>
                     </a>
@@ -119,9 +119,9 @@ return (
                       alt={`Link to homepage`} 
                       href={props.data[6].acf.link} >
                         <div className="container">
-                          {/* <img src={props.data[6].acf.image}
+                          <img src={props.data[6].acf.image}
                             alt="News feed image" 
-                          /> */}
+                          />
                           <p className="headline">{props.data[6].acf.headline}</p>
                         </div>
                     </a>
@@ -139,14 +139,11 @@ return (
               }
 
               img {
-                display: block;
-                width: auto;
-                max-width: 100%;
-                height: auto;
-                object-fit: cover; 
-                border-radius: 5px; 
-                vertical-align: middle;
-                overflow: "hidden"
+                width: 100%;
+    height: 100%;
+    object-fit: cover;
+                box-shadow: 13px 13px 20px #cbced1,
+                              -13px -13px 20px #ffffff;
               }
 
               .content-div {
@@ -188,11 +185,7 @@ return (
                 grid-template-areas: "main main feed-neumorphic" "second third fourth" "fifth sixth seventh";
               }
 
-              .grid-container * { 
-                position: relative;
-              }
-               
-               .grid-container *:after { 
+              .grid-container *:after { 
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -214,7 +207,6 @@ return (
                 position: relative;
                 text-align: left;
                 color: white;
-                height: 100%;
               }
 
               .container img {

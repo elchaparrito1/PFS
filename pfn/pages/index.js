@@ -8,6 +8,7 @@ import Section from '../components/Section';
 import Head from 'next/head';
 import '../public/navstyles.css';
 import TopNews from '../components/TopNews';
+import News from '../components/News';
 
 const Home = ({posts}) => {
 
@@ -92,8 +93,11 @@ const breakpointColumnsObj = {
       </Head>
       <Layout>
         <Navbar />
-          <div className="news-wrapper">
+          {/* <div className="news-wrapper">
             <TopNews data={topNews}/>
+          </div> */}
+          <div className="news-wrapper">
+            <News data={topNews}/>
           </div>
           <div className="section-wrapper">
             <Masonry
