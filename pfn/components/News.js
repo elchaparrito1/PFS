@@ -134,7 +134,7 @@ return (
               .gallery {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(8, 1fr);
+                grid-template-rows: repeat(7, 1fr);
                 grid-gap: 3px;
               }
               
@@ -207,7 +207,7 @@ return (
                 grid-column-start: 3;
                 grid-column-end: 4;
                 grid-row-start: 5;
-                grid-row-end: 9;
+                grid-row-end: 8;
                 max-height: 500px;
               
                 border-radius: 5px;
@@ -298,13 +298,13 @@ return (
 
               .headline {
                 position: absolute;
-                top: 70%;
+                top: 60%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 background: rgba(0, 0, 0, 0.5);
                 padding: 5px;
                 width: 99%;
-                font-size: 1vw;
+                font-size: 1.2vw;
                 text-overflow: hidden;
                 color: white;
               }

@@ -13,8 +13,8 @@ const Image = (props) => {
               <img 
                   key={props.data[0].id}
                   className="images"
-                  srcSet={`${pic.sm} 640w, 
-                            ${pic.md} 768w, 
+                  srcSet={`${pic.lg} 640w, 
+                            ${pic.lg} 768w, 
                             ${pic.lg} 1024w,
                             ${pic.lg} 1366w`} 
                   sizes="100vw" 
