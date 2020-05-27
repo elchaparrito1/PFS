@@ -25,7 +25,7 @@ return (
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
               href={props.data[1].acf.link} >
-                  <img src={props.data[1].acf.image}
+                  <img src="https://homepages.cae.wisc.edu/~ece533/images/baboon.png"
                     alt="News feed image" 
                     className="gallery__img"
                   />
@@ -98,8 +98,8 @@ return (
             </a>
           </figure>
           <figure className="gallery__item gallery__item--feed">
-            <div className="link-grid-container">
               <div className="feed">Feed</div>
+            <div className="link-grid-container">
                 {props.data.slice(7).map((post) => (
                   <div className="grid-item" key={post.id}>
                     <a 
@@ -135,7 +135,7 @@ return (
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(8, 1fr);
-                grid-gap: 5px;
+                grid-gap: 3px;
               }
               
               .gallery__img {
@@ -208,13 +208,14 @@ return (
                 grid-column-end: 4;
                 grid-row-start: 5;
                 grid-row-end: 9;
+                max-height: 500px;
               
                 border-radius: 5px;
                 background: #ecf0f3;
                 box-shadow: inset 5px 5px 5px #cbced1,
                           inset -5px -5px 5px #ffffff;
                 transition: all 2s ease-in-out;
-                overflow: scroll;
+                overflow: auto;
                 padding: 15px;
               }
 
@@ -280,7 +281,7 @@ return (
                 position: relative;
               }
 
-              .container img {
+              figure img {
                 vertical-align: middle;
                 transition: all 0.3s ease-in-out 0s;
                 -moz-transition: all 0.3s ease-in-out 0s;
@@ -288,7 +289,7 @@ return (
                 -o-transition: all 0.3s ease-in-out 0s;
               }
 
-              .container:hover img {
+              figure:hover img {
                 transform: scale(1.04);
                 -moz-transform: scale(1.04);
                 -webkit-transform: scale(1.04);
@@ -303,13 +304,128 @@ return (
                 background: rgba(0, 0, 0, 0.5);
                 padding: 5px;
                 width: 99%;
-                font-size: 1.2vw;
+                font-size: 1vw;
                 text-overflow: hidden;
                 color: white;
               }
 
               @media only screen and (max-width: 1024px) {
-               
+                .gallery {
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  grid-template-rows: repeat(12, 1fr);
+                  grid-gap: 3px;
+                }
+
+                .gallery__item--1 {
+                  grid-column-start: 1;
+                  grid-column-end: 5;
+                  grid-row-start: 1;
+                  grid-row-end: 4;
+                  position: relative;
+                }
+  
+                .gallery__item--2 {
+                  grid-column-start: 1;
+                  grid-column-end: 3;
+                  grid-row-start: 4;
+                  grid-row-end: 6;
+                  position: relative;
+                }
+  
+                .gallery__item--3 {
+                  grid-column-start: 3;
+                  grid-column-end: 5;
+                  grid-row-start: 4;
+                  grid-row-end: 6;
+                  position: relative;
+                }
+  
+                .gallery__item--4 {
+                  grid-column-start: 1;
+                  grid-column-end: 3;
+                  grid-row-start: 6;
+                  grid-row-end: 8;
+                  position: relative;
+                }
+  
+                .gallery__item--5 {
+                  grid-column-start: 3;
+                  grid-column-end: 5;
+                  grid-row-start: 6;
+                  grid-row-end: 8;
+                  position: relative;
+                }
+  
+                .gallery__item--6 {
+                  grid-column-start: 1;
+                  grid-column-end: 3;
+                  grid-row-start: 8;
+                  grid-row-end: 10;
+                  position: relative;
+                }
+  
+                .gallery__item--7 {
+                  grid-column-start: 3;
+                  grid-column-end: 5;
+                  grid-row-start: 8;
+                  grid-row-end: 10;
+                  position: relative;
+                }
+  
+                .gallery__item--feed {
+                  grid-column-start: 1;
+                  grid-column-end: 5;
+                  grid-row-start: 10;
+                  grid-row-end: 13;
+                  max-height: 300px;
+
+                  border-radius: 5px;
+                  background: #ecf0f3;
+                  box-shadow: inset 5px 5px 5px #cbced1,
+                            inset -5px -5px 5px #ffffff;
+                  transition: all 2s ease-in-out;
+                  overflow: scroll;
+                  padding: 15px;
+                }
+
+                .link-grid-container {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);;
+                  grid-gap: 15px;
+                  justify-items: center;
+                  align-items: center;
+                }
+
+                .headline {
+                  font-size: 2vw;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  padding-bottom: 0px;
+                }
+
+                .feed {
+                  font-size: 15px;
+                }
+
+                .link-neumorphic {
+                  width: 100px;
+                  height: 30px;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                }
+
+                .variation2 {
+                  font-size: 0.5rem;
+                  display: inline-block;
+                  vertical-align: middle;
+                  top: 0;
+                  transform: none;
+                }
 
               }
             
