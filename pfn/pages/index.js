@@ -42,6 +42,14 @@ const sectionsArrayObject = [
     number: '3'
   },
   {
+    name: 'Fantasy Leagues',
+    id: '13'
+  },
+  {
+    name: 'Fantasy Leagues',
+    id: '13'
+  },
+  {
     name: 'Image',
     number: '4'
   },
@@ -130,6 +138,20 @@ const breakpointColumnsObj = {
           .section-wrapper {
             margin-left: 10%; 
             margin-right: 10%;
+          }
+        }
+
+        @media only screen and (max-width: 1024px) {
+          .news-wrapper {
+            padding-top: 150px;
+            margin-left: 5%; 
+            margin-right: 5%;
+          }
+
+          .section-wrapper {
+            padding-top: 50px;
+            margin-left: 4%; 
+            margin-right: 4%;
           }
         }
       `}</style>

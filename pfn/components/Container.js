@@ -37,7 +37,7 @@ return (
 
             .fields {
               width: 100%;
-              padding: 50px 5px 5px 5px;
+              padding: 30px 5px 15px 5px;
             }
         
             .grid-container {
@@ -64,7 +64,7 @@ return (
                 padding: 10px 5px 5px 5px;
                 border-radius: 5px;
                 margin: 0 auto;
-                margin-bottom: 40px;
+                margin-bottom: 30px;
               }
 
               .title {

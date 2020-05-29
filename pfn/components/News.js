@@ -5,6 +5,7 @@ const TopNews = (props) => {
 return (
     <>
       <div className="content-div">
+        <div className="title">News</div>
         <div className="gallery">
           <figure className="gallery__item gallery__item--1">
             <a 
@@ -126,7 +127,7 @@ return (
                 display: -webkit-box;
                   -webkit-line-clamp: 3;
                   -webkit-box-orient: vertical;
-                  overflow: hidden;
+                overflow: hidden;
               }
 
               .content-div {
@@ -136,6 +137,14 @@ return (
                 background: #ecf0f3;
                 box-shadow: 13px 13px 20px #cbced1,
                             -13px -13px 20px #ffffff;
+              }
+
+              .title {
+                position: relative;
+                text-align: center;
+                font-size: 20px;
+                letter-spacing: 0.5px;
+                color: gray;
               }
             
               .gallery {
@@ -321,7 +330,7 @@ return (
                 .gallery {
                   display: grid;
                   grid-template-columns: repeat(4, 1fr);
-                  grid-template-rows: repeat(12, 1fr);
+                  grid-template-rows: repeat(18, 1fr);
                   grid-gap: 3px;
                 }
 
@@ -335,59 +344,60 @@ return (
   
                 .gallery__item--2 {
                   grid-column-start: 1;
-                  grid-column-end: 3;
+                  grid-column-end: 5;
                   grid-row-start: 4;
                   grid-row-end: 6;
                   position: relative;
                 }
   
                 .gallery__item--3 {
-                  grid-column-start: 3;
+                  grid-column-start: 1;
                   grid-column-end: 5;
-                  grid-row-start: 4;
-                  grid-row-end: 6;
+                  grid-row-start: 6;
+                  grid-row-end: 8;
                   position: relative;
                 }
   
                 .gallery__item--4 {
                   grid-column-start: 1;
-                  grid-column-end: 3;
-                  grid-row-start: 6;
-                  grid-row-end: 8;
+                  grid-column-end: 5;
+                  grid-row-start: 8;
+                  grid-row-end: 10;
                   position: relative;
                 }
   
                 .gallery__item--5 {
-                  grid-column-start: 3;
+                  grid-column-start: 1;
                   grid-column-end: 5;
-                  grid-row-start: 6;
-                  grid-row-end: 8;
+                  grid-row-start: 10;
+                  grid-row-end: 12;
                   position: relative;
                 }
   
                 .gallery__item--6 {
                   grid-column-start: 1;
-                  grid-column-end: 3;
-                  grid-row-start: 8;
-                  grid-row-end: 10;
+                  grid-column-end: 5;
+                  grid-row-start: 12;
+                  grid-row-end: 14;
                   position: relative;
                 }
   
                 .gallery__item--7 {
-                  grid-column-start: 3;
+                  grid-column-start: 1;
                   grid-column-end: 5;
-                  grid-row-start: 8;
-                  grid-row-end: 10;
+                  grid-row-start: 14;
+                  grid-row-end: 16;
                   position: relative;
                 }
   
                 .gallery__item--feed {
                   grid-column-start: 1;
                   grid-column-end: 5;
-                  grid-row-start: 10;
-                  grid-row-end: 13;
+                  grid-row-start: 16;
+                  grid-row-end: 19;
                   max-height: 300px;
-
+                  min-width: 250px;
+                  margin: 0 auto;
                   border-radius: 5px;
                   background: #ecf0f3;
                   box-shadow: inset 5px 5px 5px #cbced1,
@@ -411,7 +421,7 @@ return (
                   -webkit-line-clamp: 3;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
-                  padding-bottom: 0px;
+                  
                 }
 
                 .feed {
@@ -435,6 +445,23 @@ return (
                   transform: none;
                 }
 
+              }
+
+              @media only screen and (max-width: 1024px) {
+
+                .gallery__item--feed {
+                  max-height: 300px;
+                  min-width: 200px;
+                  margin: 0 auto;
+                }
+
+                .headline {
+                  font-size: 3vw;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                }
               }
             
               @media only screen and (min-width: 1500px) {
