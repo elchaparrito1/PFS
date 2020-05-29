@@ -25,7 +25,8 @@ export default css.global`
      
     .my-masonry-grid_column > div { 
       background: grey;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
+      padding-bottom: 40px;
     }
 
 `

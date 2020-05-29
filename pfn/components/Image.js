@@ -13,11 +13,6 @@ const Image = (props) => {
               <img 
                   key={props.data[0].id}
                   className="images"
-                  srcSet={`${pic.lg} 640w, 
-                            ${pic.lg} 768w, 
-                            ${pic.lg} 1024w,
-                            ${pic.lg} 1366w`} 
-                  sizes="100vw" 
                   src={pic.lg} 
                   alt="test image" 
               />
@@ -52,7 +47,8 @@ const Image = (props) => {
             }
 
             .images {
-              width: 100%;
+              max-width: 100%;
+              height: auto;
               box-shadow: 13px 13px 20px #cbced1,
                           -13px -13px 20px #ffffff;
               border-radius: 5px;

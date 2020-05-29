@@ -109,7 +109,7 @@ return (
                       href={post.acf.link} >
                         <div className="link-neumorphic">
                           <button className="variation2" tabIndex="-1">
-                            {post.acf.headline}
+                            <span>{post.acf.headline}</span>
                           </button>
                         </div>
                     </a>
@@ -121,6 +121,13 @@ return (
       </div>
               
       <style jsx>{`
+
+              span {
+                display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+              }
 
               .content-div {
                 align-self: start;
@@ -275,6 +282,7 @@ return (
                 position: relative;
                 top: 50%;
                 transform: translateY(-50%);
+                
               }
 
               .container {
