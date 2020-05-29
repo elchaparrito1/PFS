@@ -23,6 +23,7 @@ return (
                           -13px -13px 20px #ffffff;
               margin: 0 auto;
               margin-bottom: 50px;
+           
             }
 
             .title {
@@ -63,6 +64,7 @@ return (
                 padding: 10px 5px 5px 5px;
                 border-radius: 5px;
                 margin: 0 auto;
+                margin-bottom: 40px;
               }
 
               .title {

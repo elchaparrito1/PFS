@@ -81,7 +81,7 @@ const breakpointColumnsObj = {
   default: 3,
   1100: 3,
   1099: 3,
-  630: 3
+  630: 2
 };
 
   return (
