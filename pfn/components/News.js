@@ -7,115 +7,129 @@ return (
       <div className="content-div">
         <div className="title">News</div>
         <div className="gallery">
-          <figure className="gallery__item gallery__item--1">
+          {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
+            <figure className="gallery__item gallery__item--1">
             <a 
               target="_blank"
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
-              href={props.data[0].acf.link} >
-                  <img src={props.data[0].acf.image}
+              href={filteredArticle.acf.link} >
+                  <img src={filteredArticle.acf.image}
                     alt="News feed image" 
                     className="gallery__img"
                   />
-                  <p className="headline">{props.data[0].acf.headline}</p>
+                  <p className="headline">{filteredArticle.acf.headline}</p>
             </a>
           </figure>
+          ))}
+          {props.data.filter(obj => obj.acf.placement == "Second").map(filteredArticle => (
           <figure className="gallery__item gallery__item--2">
             <a 
               target="_blank"
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
-              href={props.data[1].acf.link} >
-                  <img src="https://homepages.cae.wisc.edu/~ece533/images/baboon.png"
+              href={filteredArticle.acf.link} >
+                  <img src={filteredArticle.acf.image}
                     alt="News feed image" 
                     className="gallery__img"
                   />
-                  <p className="headline">{props.data[1].acf.headline}</p>
+                  <p className="headline">{filteredArticle.acf.headline}</p>
             </a>
           </figure>
+          ))}
+          {props.data.filter(obj => obj.acf.placement == "Third").map(filteredArticle => (
           <figure className="gallery__item gallery__item--3">
             <a 
               target="_blank"
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
-              href={props.data[2].acf.link} >
-                  <img src={props.data[2].acf.image}
+              href={filteredArticle.acf.link} >
+                  <img src={filteredArticle.acf.image}
                     alt="News feed image" 
                     className="gallery__img"
                   />
-                  <p className="headline">{props.data[2].acf.headline}</p>
+                  <p className="headline">{filteredArticle.acf.headline}</p>
             </a>
           </figure>
+          ))}
+          {props.data.filter(obj => obj.acf.placement == "Fourth").map(filteredArticle => (
           <figure className="gallery__item gallery__item--4">
             <a 
               target="_blank"
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
-              href={props.data[3].acf.link} >
-                  <img src={props.data[3].acf.image}
+              href={filteredArticle.acf.link} >
+                  <img src={filteredArticle.acf.image}
                     alt="News feed image" 
                     className="gallery__img"
                   />
-                  <p className="headline">{props.data[3].acf.headline}</p>
+                  <p className="headline">{filteredArticle.acf.headline}</p>
             </a>
           </figure>
+          ))}
+          {props.data.filter(obj => obj.acf.placement == "Fifth").map(filteredArticle => (
           <figure className="gallery__item gallery__item--5">
             <a 
               target="_blank"
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
-              href={props.data[4].acf.link} >
-                  <img src={props.data[4].acf.image}
+              href={filteredArticle.acf.link} >
+                  <img src={filteredArticle.acf.image}
                     alt="News feed image" 
                     className="gallery__img"
                   />
-                  <p className="headline">{props.data[4].acf.headline}</p>
+                  <p className="headline">{filteredArticle.acf.headline}</p>
             </a>
           </figure>
+          ))}
+          {props.data.filter(obj => obj.acf.placement == "Sixth").map(filteredArticle => (
           <figure className="gallery__item gallery__item--6">
             <a 
               target="_blank"
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
-              href={props.data[5].acf.link} >
-                  <img src={props.data[5].acf.image}
+              href={filteredArticle.acf.link} >
+                  <img src={filteredArticle.acf.image}
                     alt="News feed image" 
                     className="gallery__img"
                   />
-                  <p className="headline">{props.data[5].acf.headline}</p>
+                  <p className="headline">{filteredArticle.acf.headline}</p>
             </a>
           </figure>
+          ))}
+          {props.data.filter(obj => obj.acf.placement == "Seventh").map(filteredArticle => (
           <figure className="gallery__item gallery__item--7">
-            <a 
+           <a 
               target="_blank"
               rel="noopener noreferrer" 
               alt={`Link to homepage`} 
-              href={props.data[6].acf.link} >
-                  <img src={props.data[6].acf.image}
+              href={filteredArticle.acf.link} >
+                  <img src={filteredArticle.acf.image}
                     alt="News feed image" 
                     className="gallery__img"
                   />
-                  <p className="headline">{props.data[6].acf.headline}</p>
+                  <p className="headline">{filteredArticle.acf.headline}</p>
             </a>
           </figure>
+          ))}
           <figure className="gallery__item gallery__item--feed">
               <div className="feed">Feed</div>
             <div className="link-grid-container">
-                {props.data.slice(7).map((post) => (
-                  <div className="grid-item" key={post.id}>
-                    <a 
-                      target="_blank"
-                      rel="noopener noreferrer" 
-                      alt={`Link to homepage`} 
-                      href={post.acf.link} >
-                        <div className="link-neumorphic">
-                          <button className="variation2" tabIndex="-1">
-                            <span>{post.acf.headline}</span>
-                          </button>
-                        </div>
-                    </a>
-                  </div>
-                ))}
+            {props.data.filter(obj => obj.acf.placement == "Feed").map(filteredArticle => (
+              <div className="grid-item" key={filteredArticle.id}>
+                <a 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  alt={`Link to homepage`} 
+                  href={filteredArticle.acf.link} >
+                    <div className="link-neumorphic">
+                      <button className="variation2" tabIndex="-1">
+                        <span>{filteredArticle.acf.headline}</span>
+                      </button>
+                    </div>
+                </a>
+              </div>
+            ))}
             </div>
           </figure>
         </div>
@@ -128,6 +142,7 @@ return (
                   -webkit-line-clamp: 3;
                   -webkit-box-orient: vertical;
                 overflow: hidden;
+               
               }
 
               .content-div {
@@ -145,6 +160,7 @@ return (
                 font-size: 20px;
                 letter-spacing: 0.5px;
                 color: gray;
+                padding-bottom: 15px;
               }
             
               .gallery {
@@ -327,6 +343,7 @@ return (
               }
 
               @media only screen and (max-width: 1024px) {
+
                 .gallery {
                   display: grid;
                   grid-template-columns: repeat(4, 1fr);
@@ -396,7 +413,7 @@ return (
                   grid-row-start: 16;
                   grid-row-end: 19;
                   max-height: 300px;
-                  min-width: 250px;
+                  min-width: 200px;
                   margin: 0 auto;
                   border-radius: 5px;
                   background: #ecf0f3;
@@ -416,12 +433,11 @@ return (
                 }
 
                 .headline {
-                  font-size: 2vw;
+                  font-size: 3vw;
                   display: -webkit-box;
                   -webkit-line-clamp: 3;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
-                  
                 }
 
                 .feed {
@@ -447,20 +463,16 @@ return (
 
               }
 
-              @media only screen and (max-width: 1024px) {
-
-                .gallery__item--feed {
-                  max-height: 300px;
-                  min-width: 200px;
-                  margin: 0 auto;
+              @media only screen and (max-width: 320px) {
+                .content-div {
+                  padding: 30px 30px 30px 30px;
+                  align-items: center
                 }
 
-                .headline {
-                  font-size: 3vw;
-                  display: -webkit-box;
-                  -webkit-line-clamp: 3;
-                  -webkit-box-orient: vertical;
-                  overflow: hidden;
+                .gallery__item--feed {
+                  background: pink;
+                  margin: 0 auto;
+                  align-items: center
                 }
               }
             

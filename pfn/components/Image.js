@@ -8,8 +8,7 @@ const Image = (props) => {
   <>
     <div className="content-div">
         <div className="fields">
-          <div className="grid-container">
-            <div className="grid-item">
+      
               <img 
                   key={props.data[0].id}
                   className="images"
@@ -21,15 +20,13 @@ const Image = (props) => {
                   src={pic.lg} 
                   alt="test image" 
               />
-            </div>
-          </div>
+
         </div>
     </div>
 
     <style jsx>{`
             .content-div {
               align-self: start;
-              padding: 35px 35px 35px 35px;
               border-radius: 10px;
               background: none;
             }
