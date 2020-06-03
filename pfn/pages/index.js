@@ -7,7 +7,6 @@ import Masonry from 'react-masonry-css';
 import Section from '../components/Section';
 import Head from 'next/head';
 import '../public/navstyles.css';
-import TopNews from '../components/TopNews';
 import News from '../components/News';
 
 const Home = ({posts}) => {
@@ -90,12 +89,10 @@ const breakpointColumnsObj = {
         <meta charSet="utf-8"></meta>
         <title>Pace News</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/soccer.png" />
       </Head>
       <Layout>
         <Navbar />
-          {/* <div className="news-wrapper">
-            <TopNews data={topNews}/>
-          </div> */}
           <div className="news-wrapper">
             <News data={topNews}/>
           </div>
