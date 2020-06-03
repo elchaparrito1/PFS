@@ -48,7 +48,7 @@ return (
               align-items: center;
             }
 
-            @media only screen and (min-width: 1500px) {
+            @media only screen and (min-width: 1900px) {
               .grid-container {
                 display: grid;
                 grid-template-columns: auto auto;

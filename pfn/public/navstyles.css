@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .bod {
   position: fixed;
   display: flex;
@@ -77,7 +81,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 30vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -139,7 +143,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 30vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -185,7 +189,7 @@
 }
 
 .menu-list {
-  padding-top: 11rem;
+  padding-top: 5rem;
 }
 
 .menu-item-container {
@@ -252,6 +256,16 @@
 @media only screen and (max-width: 1024px) {
   .logo-img {
     width: 150px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-container-scroll {
+    width: 100vw;
+  }
+
+  .menu-container {
+    width: 100vw;
   }
 }
 

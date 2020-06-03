@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Link from 'next/link';
 
 
 /* NavBar.jsx */
@@ -23,14 +24,16 @@ const NavBar = () => {
     }
   });
   
-    const menu = ['Leagues','World Cup News','Shop','Tables','Players']
+    const menu = ['Bundesliga','Football Organizations','Domestic Club Competitions','Fantasy Leagues','Players']
     const menuItems = menu.map((val, index)=>{
       return (
-        <MenuItem 
-          key={index} 
-          delay={`${index * 0.2}s`} 
-          onClick={() => setMenuOpen(false)}>{val}
-        </MenuItem>
+        <Link href={`#${val}`}>
+          <MenuItem 
+            key={index} 
+            delay={`${index * 0.2}s`} 
+            onClick={() => setMenuOpen(false)}>{val}
+          </MenuItem>
+        </Link>
         )
     });
     
@@ -50,11 +53,11 @@ const NavBar = () => {
               <img src="/pfn_transparent.png" alt="company logo" className=" not-scrolled logo-img" />
             </div>
           </div>
-          <div className="menu-container" style={open ? {height: '500px'} : {height: '0'}}>
+          <div className="menu-container" style={open ? {height: '450px'} : {height: '0'}}>
           {
             open 
               ?
-              <div className="menu-list">
+              <div style={{paddingTop: '9rem'}}>
                 {menuItems}
               </div>
               :
@@ -77,11 +80,11 @@ const NavBar = () => {
               <img src="/pfn-logo.png" alt="company logo" className="scrolled logo-img" />
             </div>
           </div>
-          <div className="menu-container-scroll" style={open ? {height: '500px'} : {height: '0'}}>
+          <div className="menu-container-scroll" style={open ? {height: '400px'} : {height: '0'}}>
           {
             open 
               ?
-              <div className="menu-list">
+              <div style={{paddingTop: '5rem'}}>
                 {menuItems}
               </div>
               :

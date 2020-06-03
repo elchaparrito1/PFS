@@ -1,9 +1,11 @@
 import React from 'react';
 import Container from '../components/Container';
 
-const Section = (props) => (
+const Section = (props) => {
+console.log(typeof toString(props.title));
+return (
   <>
-    <Container title={props.title}>
+    <Container title={props.title} name={toString(props.title)} id={toString(props.title)}>
       {props.data.map((post) => (
         <div className="grid-item" key={post.id}>
                 <a 
@@ -85,6 +87,7 @@ const Section = (props) => (
     `}</style> 
   </>
 )
+}
 
 export default Section;
 

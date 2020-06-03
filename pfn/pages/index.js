@@ -42,14 +42,6 @@ const sectionsArrayObject = [
     number: '3'
   },
   {
-    name: 'Fantasy Leagues',
-    id: '13'
-  },
-  {
-    name: 'Fantasy Leagues',
-    id: '13'
-  },
-  {
     name: 'Image',
     number: '4'
   },
