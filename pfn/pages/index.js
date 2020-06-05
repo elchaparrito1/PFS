@@ -79,7 +79,7 @@ for (const obj of sectionsArrayObject) {
 const breakpointColumnsObj = {
   default: 3,
   1100: 3,
-  1099: 3,
+  1099: 2,
   630: 2
 };
 

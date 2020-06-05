@@ -2,10 +2,10 @@ import React from 'react';
 import Container from '../components/Container';
 
 const Section = (props) => {
-console.log(typeof toString(props.title));
+console.log(`${props.title.props.children}`);
 return (
   <>
-    <Container title={props.title} name={toString(props.title)} id={toString(props.title)}>
+    <Container title={props.title} name={`${props.title.props.children}`} id={`${props.title.props.children}`}>
       {props.data.map((post) => (
         <div className="grid-item" key={post.id}>
                 <a 

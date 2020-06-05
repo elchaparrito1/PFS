@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import Link from 'next/link';
 
 
-/* NavBar.jsx */
-const NavBar = () => {
+/* Navbar.jsx */
+const Navbar = () => {
   const [notScrolled, setScrolled] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
@@ -26,14 +25,14 @@ const NavBar = () => {
   
     const menu = ['Bundesliga','Football Organizations','Domestic Club Competitions','Fantasy Leagues','Players']
     const menuItems = menu.map((val, index)=>{
+      console.log(typeof `#${val}`)
       return (
-        <Link href={`#${val}`}>
+        <a href={`#${val}`} key={index}>
           <MenuItem 
-            key={index} 
             delay={`${index * 0.2}s`} 
             onClick={() => setMenuOpen(false)}>{val}
           </MenuItem>
-        </Link>
+        </a>
         )
     });
     
@@ -99,11 +98,11 @@ const NavBar = () => {
 }
 
 /* MenuItem.jsx*/
-const MenuItem = (props) => {
+const MenuItem = React.forwardRef((props, ref) => {
   const [hover, setHover] = useState(true);
   
-    return(
-        <div className="menu-item-container" style={{animationDelay: `${props.delay}`}}>
+    return (
+        <div ref={ref} className="menu-item-container" style={{animationDelay: `${props.delay}`}}>
           <div 
             className="menu-item"
             style={hover ? {color: 'white', animationDelay: `${props.delay}`} : {color: '#fafafa', animationDelay: `${props.delay}`}}
@@ -116,7 +115,7 @@ const MenuItem = (props) => {
           <div className="line" style={{animationDelay: `${props.delay}`}}/>
         </div> 
     )
-}
+})
 
-export default NavBar;
+export default Navbar;
 

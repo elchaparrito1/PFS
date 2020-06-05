@@ -8,7 +8,7 @@ return (
         <div className="title">News</div>
         <div className="gallery">
           {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
-            <figure className="gallery__item gallery__item--1">
+            <figure className="gallery__item gallery__item--1" key={filteredArticle.id}>
             <a 
               target="_blank"
               rel="noopener noreferrer" 
@@ -23,7 +23,7 @@ return (
           </figure>
           ))}
           {props.data.filter(obj => obj.acf.placement == "Second").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--2">
+          <figure className="gallery__item gallery__item--2" key={filteredArticle.id}>
             <a 
               target="_blank"
               rel="noopener noreferrer" 
@@ -38,7 +38,7 @@ return (
           </figure>
           ))}
           {props.data.filter(obj => obj.acf.placement == "Third").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--3">
+          <figure className="gallery__item gallery__item--3" key={filteredArticle.id}>
             <a 
               target="_blank"
               rel="noopener noreferrer" 
@@ -53,7 +53,7 @@ return (
           </figure>
           ))}
           {props.data.filter(obj => obj.acf.placement == "Fourth").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--4">
+          <figure className="gallery__item gallery__item--4" key={filteredArticle.id}>
             <a 
               target="_blank"
               rel="noopener noreferrer" 
@@ -68,7 +68,7 @@ return (
           </figure>
           ))}
           {props.data.filter(obj => obj.acf.placement == "Fifth").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--5">
+          <figure className="gallery__item gallery__item--5" key={filteredArticle.id}>
             <a 
               target="_blank"
               rel="noopener noreferrer" 
@@ -83,7 +83,7 @@ return (
           </figure>
           ))}
           {props.data.filter(obj => obj.acf.placement == "Sixth").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--6">
+          <figure className="gallery__item gallery__item--6" key={filteredArticle.id}>
             <a 
               target="_blank"
               rel="noopener noreferrer" 
@@ -98,7 +98,7 @@ return (
           </figure>
           ))}
           {props.data.filter(obj => obj.acf.placement == "Seventh").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--7">
+          <figure className="gallery__item gallery__item--7" key={filteredArticle.id}>
            <a 
               target="_blank"
               rel="noopener noreferrer" 
@@ -463,16 +463,29 @@ return (
 
               }
 
-              @media only screen and (max-width: 320px) {
+              @media only screen and (max-width: 768px) {
                 .content-div {
                   padding: 30px 30px 30px 30px;
                   align-items: center
                 }
 
+                .headline {
+                  padding: 1px 5px 1px 5px;
+                }
+
                 .gallery__item--feed {
-                  background: pink;
                   margin: 0 auto;
-                  align-items: center
+                  align-items: center;
+                  min-width: 200px;
+                  max-width: 200px;
+                }
+
+                .link-grid-container {
+                  grid-template-columns: 1fr;
+                }
+
+                .link-neumorphic {
+                  width: 150px;
                 }
               }
             
