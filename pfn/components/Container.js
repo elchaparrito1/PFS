@@ -50,21 +50,39 @@ return (
 
             @media only screen and (min-width: 1900px) {
               .grid-container {
-                display: grid;
                 grid-template-columns: auto auto;
-                grid-gap: 15px;
-                justify-items: center;
-                align-items: center;
               }
             }
 
-            @media only screen and (max-width: 1024px) {
+            @media only screen and (min-width: 768px) and (max-width: 1024px) {
               .content-div {
                 align-self: start;
                 padding: 10px 5px 5px 5px;
                 border-radius: 5px;
                 margin: 0 auto;
                 margin-bottom: 30px;
+              }
+
+              .grid-container {
+                grid-template-columns: auto auto;
+              }
+
+              .title {
+                font-size: 20px;
+              }
+            }
+
+            @media only screen and (max-width: 767px) {
+              .content-div {
+                align-self: start;
+                padding: 10px 5px 5px 5px;
+                border-radius: 5px;
+                margin: 0 auto;
+                margin-bottom: 30px;
+              }
+
+              .grid-container {
+                grid-template-columns: auto;
               }
 
               .title {

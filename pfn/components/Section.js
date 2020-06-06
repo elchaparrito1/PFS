@@ -69,19 +69,35 @@ return (
               transition: ease-out 0.8s;
             }
 
-            @media only screen and (max-width: 1024px) {
+            @media only screen and (min-width: 768px) and (max-width: 1024px) {
               .neumorphic {
-                width: 100px;
-                height: 20px;
+                width: 130px;
+                height: 50px;
               }
 
               .variation2 {
-                font-size: 0.5rem;
+                font-size: 0.9rem;
                 display: inline-block;
                 vertical-align: middle;
                 position: relative;
-                top: 0;
-                transform: none;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+
+            @media only screen and (max-width: 767px) {
+              .neumorphic {
+                width: 130px;
+                height: 40px;
+              }
+
+              .variation2 {
+                font-size: 0.7rem;
+                display: inline-block;
+                vertical-align: middle;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
               }
             }
     `}</style> 
