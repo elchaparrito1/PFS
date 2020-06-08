@@ -69,14 +69,14 @@ return (
               transition: ease-out 0.8s;
             }
 
-            @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            @media only screen and (max-width: 320px) {
               .neumorphic {
-                width: 130px;
-                height: 50px;
+                width: 100px;
+                height: 40px;
               }
 
               .variation2 {
-                font-size: 0.9rem;
+                font-size: 0.7rem;
                 display: inline-block;
                 vertical-align: middle;
                 position: relative;
@@ -85,7 +85,7 @@ return (
               }
             }
 
-            @media only screen and (max-width: 767px) {
+            @media only screen and (min-width: 321px) and (max-width: 767px) {
               .neumorphic {
                 width: 130px;
                 height: 40px;
@@ -93,6 +93,22 @@ return (
 
               .variation2 {
                 font-size: 0.7rem;
+                display: inline-block;
+                vertical-align: middle;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+
+            @media only screen and (min-width: 768px) and (max-width: 1024px) {
+              .neumorphic {
+                width: 130px;
+                height: 50px;
+              }
+
+              .variation2 {
+                font-size: 0.9rem;
                 display: inline-block;
                 vertical-align: middle;
                 position: relative;
