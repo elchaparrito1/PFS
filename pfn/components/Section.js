@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../components/Container';
 
 const Section = (props) => {
-console.log(`${props.title.props.children}`);
+// console.log(`${props.title.props.children}`);
 return (
   <>
     <Container title={props.title} name={`${props.title.props.children}`} id={`${props.title.props.children}`}>

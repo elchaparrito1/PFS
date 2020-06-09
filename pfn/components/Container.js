@@ -4,7 +4,7 @@ const Container = (props) => {
 
 return (
   <>
-    <div className="content-div">
+    <div className="content-div" id={props.id}>
       <div className="title">{props.title}</div>
         <div className="fields">
           <div className="grid-container">
