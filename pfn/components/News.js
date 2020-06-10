@@ -1,139 +1,142 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 
 const TopNews = (props) => {
 
 return (
     <>
-      <div className="content-div">
-        <div className="title">News</div>
-        <div className="gallery">
-          {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
-            <figure className="gallery__item gallery__item--1" key={filteredArticle.id}>
-            <a 
-              target="_blank"
-              rel="noopener noreferrer" 
-              alt={`Link to homepage`} 
-              href={filteredArticle.acf.link} >
-                  <img src={filteredArticle.acf.image}
-                    alt="News feed image" 
-                    className="gallery__img"
-                  />
-                  <p className="headline">{filteredArticle.acf.headline}</p>
-            </a>
-          </figure>
-          ))}
-          {props.data.filter(obj => obj.acf.placement == "Second").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--2" key={filteredArticle.id}>
-            <a 
-              target="_blank"
-              rel="noopener noreferrer" 
-              alt={`Link to homepage`} 
-              href={filteredArticle.acf.link} >
-                  <img src={filteredArticle.acf.image}
-                    alt="News feed image" 
-                    className="gallery__img"
-                  />
-                  <p className="headline">{filteredArticle.acf.headline}</p>
-            </a>
-          </figure>
-          ))}
-          {props.data.filter(obj => obj.acf.placement == "Third").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--3" key={filteredArticle.id}>
-            <a 
-              target="_blank"
-              rel="noopener noreferrer" 
-              alt={`Link to homepage`} 
-              href={filteredArticle.acf.link} >
-                  <img src={filteredArticle.acf.image}
-                    alt="News feed image" 
-                    className="gallery__img"
-                  />
-                  <p className="headline">{filteredArticle.acf.headline}</p>
-            </a>
-          </figure>
-          ))}
-          {props.data.filter(obj => obj.acf.placement == "Fourth").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--4" key={filteredArticle.id}>
-            <a 
-              target="_blank"
-              rel="noopener noreferrer" 
-              alt={`Link to homepage`} 
-              href={filteredArticle.acf.link} >
-                  <img src={filteredArticle.acf.image}
-                    alt="News feed image" 
-                    className="gallery__img"
-                  />
-                  <p className="headline">{filteredArticle.acf.headline}</p>
-            </a>
-          </figure>
-          ))}
-          {props.data.filter(obj => obj.acf.placement == "Fifth").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--5" key={filteredArticle.id}>
-            <a 
-              target="_blank"
-              rel="noopener noreferrer" 
-              alt={`Link to homepage`} 
-              href={filteredArticle.acf.link} >
-                  <img src={filteredArticle.acf.image}
-                    alt="News feed image" 
-                    className="gallery__img"
-                  />
-                  <p className="headline">{filteredArticle.acf.headline}</p>
-            </a>
-          </figure>
-          ))}
-          {props.data.filter(obj => obj.acf.placement == "Sixth").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--6" key={filteredArticle.id}>
-            <a 
-              target="_blank"
-              rel="noopener noreferrer" 
-              alt={`Link to homepage`} 
-              href={filteredArticle.acf.link} >
-                  <img src={filteredArticle.acf.image}
-                    alt="News feed image" 
-                    className="gallery__img"
-                  />
-                  <p className="headline">{filteredArticle.acf.headline}</p>
-            </a>
-          </figure>
-          ))}
-          {props.data.filter(obj => obj.acf.placement == "Seventh").map(filteredArticle => (
-          <figure className="gallery__item gallery__item--7" key={filteredArticle.id}>
-           <a 
-              target="_blank"
-              rel="noopener noreferrer" 
-              alt={`Link to homepage`} 
-              href={filteredArticle.acf.link} >
-                  <img src={filteredArticle.acf.image}
-                    alt="News feed image" 
-                    className="gallery__img"
-                  />
-                  <p className="headline">{filteredArticle.acf.headline}</p>
-            </a>
-          </figure>
-          ))}
-          <figure className="gallery__item gallery__item--feed">
-              <div className="feed">Feed</div>
-            <div className="link-grid-container">
-            {props.data.filter(obj => obj.acf.placement == "Feed").map(filteredArticle => (
-              <div className="grid-item" key={filteredArticle.id}>
-                <a 
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  alt={`Link to homepage`} 
-                  href={filteredArticle.acf.link} >
-                    <div className="link-neumorphic">
-                      <button className="variation2" tabIndex="-1">
-                        <span>{filteredArticle.acf.headline}</span>
-                      </button>
-                    </div>
-                </a>
-              </div>
+      <Element name="News">
+        <div className="content-div">
+          <div className="title">News</div>
+          <div className="gallery">
+            {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
+              <figure className="gallery__item gallery__item--1" key={filteredArticle.id}>
+              <a 
+                target="_blank"
+                rel="noopener noreferrer" 
+                alt={`Link to homepage`} 
+                href={filteredArticle.acf.link} >
+                    <img src={filteredArticle.acf.image}
+                      alt="News feed image" 
+                      className="gallery__img"
+                    />
+                    <p className="headline">{filteredArticle.acf.headline}</p>
+              </a>
+            </figure>
             ))}
-            </div>
-          </figure>
+            {props.data.filter(obj => obj.acf.placement == "Second").map(filteredArticle => (
+            <figure className="gallery__item gallery__item--2" key={filteredArticle.id}>
+              <a 
+                target="_blank"
+                rel="noopener noreferrer" 
+                alt={`Link to homepage`} 
+                href={filteredArticle.acf.link} >
+                    <img src={filteredArticle.acf.image}
+                      alt="News feed image" 
+                      className="gallery__img"
+                    />
+                    <p className="headline">{filteredArticle.acf.headline}</p>
+              </a>
+            </figure>
+            ))}
+            {props.data.filter(obj => obj.acf.placement == "Third").map(filteredArticle => (
+            <figure className="gallery__item gallery__item--3" key={filteredArticle.id}>
+              <a 
+                target="_blank"
+                rel="noopener noreferrer" 
+                alt={`Link to homepage`} 
+                href={filteredArticle.acf.link} >
+                    <img src={filteredArticle.acf.image}
+                      alt="News feed image" 
+                      className="gallery__img"
+                    />
+                    <p className="headline">{filteredArticle.acf.headline}</p>
+              </a>
+            </figure>
+            ))}
+            {props.data.filter(obj => obj.acf.placement == "Fourth").map(filteredArticle => (
+            <figure className="gallery__item gallery__item--4" key={filteredArticle.id}>
+              <a 
+                target="_blank"
+                rel="noopener noreferrer" 
+                alt={`Link to homepage`} 
+                href={filteredArticle.acf.link} >
+                    <img src={filteredArticle.acf.image}
+                      alt="News feed image" 
+                      className="gallery__img"
+                    />
+                    <p className="headline">{filteredArticle.acf.headline}</p>
+              </a>
+            </figure>
+            ))}
+            {props.data.filter(obj => obj.acf.placement == "Fifth").map(filteredArticle => (
+            <figure className="gallery__item gallery__item--5" key={filteredArticle.id}>
+              <a 
+                target="_blank"
+                rel="noopener noreferrer" 
+                alt={`Link to homepage`} 
+                href={filteredArticle.acf.link} >
+                    <img src={filteredArticle.acf.image}
+                      alt="News feed image" 
+                      className="gallery__img"
+                    />
+                    <p className="headline">{filteredArticle.acf.headline}</p>
+              </a>
+            </figure>
+            ))}
+            {props.data.filter(obj => obj.acf.placement == "Sixth").map(filteredArticle => (
+            <figure className="gallery__item gallery__item--6" key={filteredArticle.id}>
+              <a 
+                target="_blank"
+                rel="noopener noreferrer" 
+                alt={`Link to homepage`} 
+                href={filteredArticle.acf.link} >
+                    <img src={filteredArticle.acf.image}
+                      alt="News feed image" 
+                      className="gallery__img"
+                    />
+                    <p className="headline">{filteredArticle.acf.headline}</p>
+              </a>
+            </figure>
+            ))}
+            {props.data.filter(obj => obj.acf.placement == "Seventh").map(filteredArticle => (
+            <figure className="gallery__item gallery__item--7" key={filteredArticle.id}>
+             <a 
+                target="_blank"
+                rel="noopener noreferrer" 
+                alt={`Link to homepage`} 
+                href={filteredArticle.acf.link} >
+                    <img src={filteredArticle.acf.image}
+                      alt="News feed image" 
+                      className="gallery__img"
+                    />
+                    <p className="headline">{filteredArticle.acf.headline}</p>
+              </a>
+            </figure>
+            ))}
+            <figure className="gallery__item gallery__item--feed">
+                <div className="feed">Feed</div>
+              <div className="link-grid-container">
+              {props.data.filter(obj => obj.acf.placement == "Feed").map(filteredArticle => (
+                <div className="grid-item" key={filteredArticle.id}>
+                  <a 
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    alt={`Link to homepage`} 
+                    href={filteredArticle.acf.link} >
+                      <div className="link-neumorphic">
+                        <button className="variation2" tabIndex="-1">
+                          <span>{filteredArticle.acf.headline}</span>
+                        </button>
+                      </div>
+                  </a>
+                </div>
+              ))}
+              </div>
+            </figure>
+          </div>
         </div>
-      </div>
+      </Element>
               
       <style jsx>{`
 

@@ -1,17 +1,20 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 
 const Container = (props) => {
 
 return (
   <>
-    <div className="content-div" id={props.id}>
-      <div className="title">{props.title}</div>
-        <div className="fields">
-          <div className="grid-container">
-            {props.children}
+    <Element name={props.id} style={{background: "none", borderRadius: "5px"}}>
+      <div className="content-div">
+        <div className="title">{props.title}</div>
+          <div className="fields">
+            <div className="grid-container">
+              {props.children}
+            </div>
           </div>
-        </div>
-    </div>
+      </div>
+    </Element>
 
     <style jsx>{`
             .content-div {
@@ -95,18 +98,4 @@ return (
 }
 
 export default Container;
-
-// .title {
-//   position: relative;
-//   border-radius: 5px;
-//   text-align: center;
-//   font-size: 20px;
-//   padding: 10px;
-//   letter-spacing: 0.5px;
-//   background: #014899;
-//   box-shadow: 3px 3px 8px #b1b1b1,
-//               -3px -3px 8px #ffffff;
-//   transition: 0.5s;
-//   color: white;
-// }
 
