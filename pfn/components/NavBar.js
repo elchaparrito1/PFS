@@ -1,5 +1,6 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
+import { ScrolledMenu, Menu } from './styled';
 
 /* Navbar.jsx */
 const Navbar = () => {
@@ -81,17 +82,31 @@ const Navbar = () => {
               <img src="/pfn_transparent.png" alt="company logo" className=" not-scrolled logo-img" />
             </div>
           </div>
-          <div className="menu-container" style={open ? {height: '500px'} : {height: '0'}}>
-          {
-            open 
-              ?
-              <div style={{paddingTop: '9rem'}}>
-                {menuItems}
-              </div>
-              :
-              null
-          }
-          </div>
+          {open ? 
+            <Menu opened >
+              {
+              open 
+                ?
+                <div className="padding-top">
+                  {menuItems}
+                </div>
+                :
+                null
+              }
+            </Menu>
+           : 
+            <Menu>
+              {
+              open 
+                ?
+                <div className="padding-top">
+                  {menuItems}
+                </div>
+                :
+                null
+              }
+            </Menu>
+          } 
         </div>
       </div>
       :
@@ -108,17 +123,32 @@ const Navbar = () => {
               <img src="/pfn-logo.png" alt="company logo" className="scrolled logo-img" />
             </div>
           </div>
-          <div className="menu-container-scroll" style={open ? {height: '450px'} : {height: '0'}}>
-          {
-            open 
-              ?
-              <div style={{paddingTop: '5rem'}}>
-                {menuItems}
-              </div>
-              :
-              null
-          }
-          </div>
+          {open ? 
+            <ScrolledMenu opened >
+              {
+              open 
+                ?
+                <div className="padding-top-scrolled">
+                  {menuItems}
+                </div>
+                :
+                null
+              }
+            </ScrolledMenu>
+           : 
+            <ScrolledMenu>
+              {
+              open 
+                ?
+                <div className="padding-top-scrolled">
+                  {menuItems}
+                </div>
+                :
+                null
+              }
+            </ScrolledMenu>
+          } 
+          
         </div>
       </div>
       }
@@ -133,8 +163,8 @@ const MenuItem = React.forwardRef((props, ref) => {
     return (
         <div ref={ref} className="menu-item-container" style={{animationDelay: `${props.delay}`}}>
           <div 
-            className="menu-item"
             style={hover ? {color: 'white', animationDelay: `${props.delay}`} : {color: '#fafafa', animationDelay: `${props.delay}`}}
+            className="menu-item"
             onMouseEnter={() => setHover(!hover)} 
             onMouseLeave={() => setHover(!hover)}
             onClick={props.onClick}

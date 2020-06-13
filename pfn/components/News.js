@@ -582,7 +582,8 @@ return (
 
                 .gallery__img {
                   width: 100%;
-                  height: 250px;
+                  min-height: 150px;
+                  max-height: 150px;
                   object-fit: cover;
                   border-radius: 5px;
                   box-shadow: 13px 13px 20px #cbced1,
@@ -592,7 +593,7 @@ return (
                 .gallery {
                   display: grid;
                   grid-template-columns: repeat(4, 1fr);
-                  grid-template-rows: repeat(5, 1fr);
+                  grid-template-rows: repeat(4, 1fr);
                   grid-gap: 3px;
                 }
 
@@ -662,11 +663,15 @@ return (
 
                 .headline {
                   position: absolute;
-                  top: 60%;
+                  top: 50%;
                   left: 50%;
                   transform: translate(-50%, -50%);
-                  font-size: 2.5vw;
+                  font-size: 2vw;
                   padding: 1px 5px 1px 5px;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
                 }
 
                 .gallery__item--feed {
@@ -955,6 +960,7 @@ return (
 
                 .headline {
                   position: absolute;
+                  padding: 3px;
                   top: 60%;
                   left: 50%;
                   transform: translate(-50%, -50%);
