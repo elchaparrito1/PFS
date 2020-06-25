@@ -6,13 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export"
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "framer-motion": "^1.10.3",
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.3.1",
+    "next-on-netlify": "^2.2.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
