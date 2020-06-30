@@ -72,14 +72,14 @@ return (
             <figure className="gallery__item gallery__item--feed">
                 <div className="feed">Feed</div>
               <div className="link-grid-container">
-              {props.data.filter(obj => obj.acf.placement == "Feed").map(filteredArticle => (
+              {props.data.filter(obj => obj.acf.placement == "Feed").map((filteredArticle, index) => (
                 <div className="grid-item" key={filteredArticle.id}>
                   <a 
                     target="_blank"
                     rel="noopener noreferrer" 
                     alt={`Link to homepage`} 
                     href={filteredArticle.acf.link} >
-                      <div className="link-neumorphic">
+                      <div className="neumorphic button_slide slide_right">
                         <button className="variation2" tabIndex="-1">
                           <span>{filteredArticle.acf.headline}</span>
                         </button>
@@ -94,13 +94,11 @@ return (
       </Element>
               
       <style jsx>{`
-
               span {
                 display: -webkit-box;
                   -webkit-line-clamp: 3;
                   -webkit-box-orient: vertical;
                 overflow: hidden;
-               
               }
 
               .content-div {
@@ -177,9 +175,6 @@ return (
                 max-height: 500px;
               
                 border-radius: 5px;
-                background: #ecf0f3;
-                box-shadow: inset 5px 5px 5px #cbced1,
-                          inset -5px -5px 5px #ffffff;
                 transition: all 2s ease-in-out;
                 overflow: auto;
                 padding: 15px;
@@ -188,6 +183,8 @@ return (
               .link-grid-container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+                grid-auto-flow: column;
                 grid-gap: 15px;
                 justify-items: center;
                 align-items: center;
@@ -206,28 +203,31 @@ return (
                 text-align: center;
               }  
 
-              .link-neumorphic {
-                border-radius: 5px;
-                background: #ecf0f3;
-                box-shadow: 6px 6px 16px #cbced1,
-                          -6px -6px 26px #ffffff;
+              .neumorphic {
+                box-shadow: inset 5px 5px 5px #cbced1,
+                            inset -5px -5px 5px #ffffff;
                 width: 250px;
                 height: 50px;
+                border-radius: 5px;
                 overflow: hidden;
                 position: relative;
-                cursor: pointer;
-
-                transition: all 0.3s ease-in-out 0s;
-                -moz-transition: all 0.3s ease-in-out 0s;
-                -webkit-transition: all 0.3s ease-in-out 0s;
-                -o-transition: all 0.3s ease-in-out 0s;
               }
 
-              .link-neumorphic:hover {
-                transform: scale(1.07);
-                -moz-transform: scale(1.07);
-                -webkit-transform: scale(1.07);
-                -o-transform: scale(1.07);
+              .button_slide {
+                -webkit-transition: ease-out 0.8s;
+                -moz-transition: ease-out 0.8s;
+                transition: ease-out 0.8s;
+              }
+          
+              .slide_right:hover {
+                box-shadow: inset 400px 0 0 0 #014899;
+              }
+          
+              .slide_right:hover .variation2 {
+                color: white;
+                -webkit-transition: ease-out 0.8s;
+                -moz-transition: ease-out 0.8s;
+                transition: ease-out 0.8s;
               }
 
               .variation2 {
@@ -241,7 +241,6 @@ return (
                 position: relative;
                 top: 50%;
                 transform: translateY(-50%);
-                
               }
 
               .container {
@@ -280,7 +279,6 @@ return (
                 .content-div {
                   padding: 30px 30px 30px 30px;
                   align-items: center
-                  // background: green;
                 }
 
                 .gallery__img {
@@ -362,13 +360,18 @@ return (
                   font-size: 15px;
                 }
 
-                .link-neumorphic {
+                .neumorphic {
                   width: 150px;
                   height: 50px;
                   display: -webkit-box;
                   -webkit-line-clamp: 2;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
                 }
 
                 .variation2 {
@@ -382,9 +385,8 @@ return (
 
               @media only screen and (min-width: 321px) and (max-width: 767px) {
                 .content-div {
-                  padding: 30px 30px 30px 30px;
+                  padding: 30px 0px 30px 0px;
                   align-items: center;
-                  // background: pink;
                 }
 
                 .gallery {
@@ -437,27 +439,32 @@ return (
                   grid-row-start: 9;
                   grid-row-end: 11;
                   margin: 0 auto;
+                  text-align: center;
                   align-items: center;
                   max-height: 300px;
-                  min-width: 250px;
-                  max-width: 250px;
+                  max-width: 350px;
                 }
 
                 .link-grid-container {
-                  grid-template-columns: 1fr;
+                  grid-template-columns: repeat(2, 1fr);
                 }
 
                 .feed {
                   font-size: 15px;
                 }
 
-                .link-neumorphic {
-                  width: 150px;
+                .neumorphic {
+                  width: 120px;
                   height: 50px;
                   display: -webkit-box;
                   -webkit-line-clamp: 2;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
                 }
 
                 .variation2 {
@@ -473,7 +480,6 @@ return (
                 .content-div {
                   padding: 30px 30px 30px 30px;
                   align-items: center;
-                  // background: orange;
                 }
 
                 .gallery__img {
@@ -562,13 +568,18 @@ return (
                   font-size: 15px;
                 }
 
-                .link-neumorphic {
+                .neumorphic {
                   width: 150px;
                   height: 50px;
                   display: -webkit-box;
                   -webkit-line-clamp: 2;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
+                  display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
                 }
 
                 .variation2 {
@@ -581,10 +592,6 @@ return (
               }
 
               @media only screen and (min-width: 768px) and (max-width: 1024px) {
-                // .content-div {
-                //   background: purple;
-                // }
-
                 .title {
                   font-size: 30px;
                 }
@@ -637,9 +644,6 @@ return (
                   max-height: 450px;
                   margin: 0 auto;
                   border-radius: 5px;
-                  background: #ecf0f3;
-                  box-shadow: inset 5px 5px 5px #cbced1,
-                            inset -5px -5px 5px #ffffff;
                   transition: all 2s ease-in-out;
                   overflow: scroll;
                   padding: 15px;
@@ -666,13 +670,18 @@ return (
                   padding-bottom: 35px;
                 }
 
-                .link-neumorphic {
+                .neumorphic {
                   width: 250px;
                   height: 70px;
                   display: -webkit-box;
                   -webkit-line-clamp: 2;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
                 }
 
                 .variation2 {
@@ -755,9 +764,6 @@ return (
                   min-width: 600px;
                   margin: 0 auto;
                   border-radius: 5px;
-                  background: #ecf0f3;
-                  box-shadow: inset 5px 5px 5px #cbced1,
-                            inset -5px -5px 5px #ffffff;
                   transition: all 2s ease-in-out;
                   overflow: scroll;
                   padding: 15px;
@@ -789,13 +795,18 @@ return (
                   padding-bottom: 35px;
                 }
 
-                .link-neumorphic {
+                .neumorphic {
                   width: 250px;
                   height: 70px;
                   display: -webkit-box;
                   -webkit-line-clamp: 2;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
                 }
 
                 .variation2 {
