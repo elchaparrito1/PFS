@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import fetch from 'isomorphic-unfetch';
 import Navbar from '../components/NavBar';
 import Layout from '../components/Layout';
@@ -8,8 +8,26 @@ import Section from '../components/Section';
 import Head from 'next/head';
 import '../public/navstyles.css';
 import News from '../components/News';
+import viewportContext from '../components/viewportContext';
+
 
 const Home = ({posts}) => {
+    const [width, setWidth] = useState(null);
+  
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+    }
+  
+    useEffect(() => {
+      window.addEventListener("resize", handleWindowResize);
+      return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
+    if (process.browser) {
+      useEffect(() => setWidth(document.children[0].clientWidth), [
+      document.children[0].clientWidth
+      ])
+    }
 
 const sectionsArrayObject = [
   {
@@ -92,20 +110,22 @@ const breakpointColumnsObj = {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet"></link>
         <link rel="shortcut icon" href="/PFN.svg" />
       </Head>
-      <Layout>
-        <Navbar />
-          <div className="news-wrapper">
-            <News data={topNews}/>
-          </div>
-          <div className="section-wrapper">
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="my-masonry-grid"
-              columnClassName="my-masonry-grid_column">
-                {sections}
-            </Masonry>
-          </div>
-      </Layout>
+        <viewportContext.Provider value={{width}}>
+          <Layout>
+            <Navbar />
+              <div className="news-wrapper">
+                <News data={topNews}/>
+              </div>
+              <div className="section-wrapper">
+                <Masonry
+                  breakpointCols={breakpointColumnsObj}
+                  className="my-masonry-grid"
+                  columnClassName="my-masonry-grid_column">
+                    {sections}
+                </Masonry>
+              </div>
+          </Layout>
+        </viewportContext.Provider>
       <style>{`
         .news-wrapper {
           padding-top: 200px; 

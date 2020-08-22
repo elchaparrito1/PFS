@@ -91,7 +91,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 51;
   opacity: 1;
   display: flex;
   align-items:center;
@@ -211,9 +211,13 @@ a {
 }
 
 @media only screen and (max-width: 320px) {
-  .slide_right:hover {
-    box-shadow: inset 5px 5px 5px #cbced1,
-    inset -5px -5px 5px #ffffff;
+  .logo {
+    position: relative;
+    padding: 70px 20px 20px 10px;
+  }
+  
+  .not-scrolled {
+      width: 250px;
   }
 
   .media-button-container:hover div:nth-child(n) {
@@ -229,7 +233,7 @@ a {
   }
 
   .scrolled-not-desktop {
-    width: 84px;
+    width: 180px;
   }
 }
 
@@ -284,8 +288,12 @@ a {
   .scrolled-not-desktop {
     width: 250px;
   }
-}
 
+  .logo {
+    position: relative;
+    padding: 60px 50px 60px 5px;
+  }
+}
 
 @media only screen and (min-width: 321px) and (max-width: 767px) and (orientation: landscape) {
   .slide_right:hover {
@@ -298,7 +306,7 @@ a {
   }
   
   .scrolled-not-desktop {
-    width: 150px;
+    width: 200px;
   }
   
   .padding-top {
@@ -310,10 +318,20 @@ a {
   }
 
   .menu-item {
-    line-height: 10px;
+    line-height: 14px;
     font-size: 0.9rem;
     padding: 0.6rem 0;
   }
+
+  .logo {
+    position: relative;
+    padding: 90px 20px 20px 10px;
+  }
+  
+  .not-scrolled {
+      width: 250px;
+  }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {

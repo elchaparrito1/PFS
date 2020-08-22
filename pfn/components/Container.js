@@ -5,7 +5,7 @@ const Container = (props) => {
 
 return (
   <>
-    <Element name={props.id} style={{background: "none", borderRadius: "5px"}}>
+    <Element name={props.id} style={{background: "none", borderRadius: "40px"}}>
       <div className="content-div">
         <div className="title">{props.title}</div>
           <div className="fields">
@@ -29,7 +29,6 @@ return (
             }
 
             .title {
-              font-family: Inter;
               text-align: center;
               font-style: normal;
               font-weight: bold;
@@ -52,6 +51,52 @@ return (
               align-items: center;
             }
 
+            @media only screen and (max-width: 320px) {
+              .content-div {
+                align-self: start;
+                padding: 5px;
+                border-radius: 40px;
+                margin: 0 auto;
+                margin-bottom: 30px;
+              }
+
+              .title {
+                font-size: 16px;
+                padding: 20px 2px 2px 2px;
+              }
+
+              .grid-container {
+                grid-gap: 5px;
+              }
+            }
+
+            //iphone 5S landscape
+            @media only screen and (min-width: 321px) and (max-width: 767px) and (orientation: landscape) {
+              .title {
+                font-size: 20px;
+                padding: 20px 2px 2px 2px;
+              }
+
+              .grid-container {
+                grid-gap: 5px;
+              }
+            }
+
+            @media only screen and (min-width: 321px) and (max-width: 767px) {
+              .content-div {
+                padding: 10px;
+              }
+
+              .title {
+                font-size: 20px;
+                padding: 20px 0px 2px 0px;
+              }
+
+              .grid-container {
+                grid-gap: 5px;
+              }
+            }
+
             @media only screen and (min-width: 1900px) {
               .grid-container {
                 grid-template-columns: auto auto;
@@ -61,8 +106,8 @@ return (
             @media only screen and (min-width: 768px) and (max-width: 1024px) {
               .content-div {
                 align-self: start;
-                padding: 10px 5px 5px 5px;
-                border-radius: 5px;
+                padding: 15px;
+                border-radius: 40px;
                 margin: 0 auto;
                 margin-bottom: 30px;
               }
@@ -72,26 +117,13 @@ return (
               }
 
               .title {
-                font-size: 20px;
+                font-size: 25px;
+                padding: 20px;
               }
             }
 
             @media only screen and (max-width: 767px) {
-              .content-div {
-                align-self: start;
-                padding: 10px 5px 5px 5px;
-                border-radius: 5px;
-                margin: 0 auto;
-                margin-bottom: 30px;
-              }
-
-              .grid-container {
-                grid-template-columns: auto;
-              }
-
-              .title {
-                font-size: 15px;
-              }
+              
             }
     `}</style> 
   </>

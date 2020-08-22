@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from '../components/Container';
+import viewportContext from './viewportContext';
 
 const Section = (props) => {
-// console.log(`${props.title.props.children}`);
+  const { width } = useContext(viewportContext);
 return (
   <>
     <Container title={props.title} name={`${props.title.props.children}`} id={`${props.title.props.children}`}>
       {props.data.map((post) => (
-        <div className="grid-item" key={post.id}>
+        <div className="grid-item" key={post.id} style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
                 <a 
                   target="_blank"
                   rel="noopener noreferrer" 
@@ -23,7 +24,6 @@ return (
             .grid-item {
               text-align: center;
               position: relative;
-              z-index: 50;
             }
 
             .link-title {
@@ -44,11 +44,22 @@ return (
             }
 
             @media only screen and (max-width: 320px) {
+              .link-title {
+                font-size: 12px;
+              }
+            }
 
+            //iphone 5S landscape
+            @media only screen and (min-width: 321px) and (max-width: 767px) and (orientation: landscape) {
+              .link-title {
+                font-size: 12px;
+              }
             }
 
             @media only screen and (min-width: 321px) and (max-width: 767px) {
-
+              .link-title {
+                font-size: 14px;
+              }
             }
 
             @media only screen and (min-width: 768px) and (max-width: 1024px) {

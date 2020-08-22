@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-scroll';
 import { ScrolledMenu, Menu } from './styled';
+import viewportContext from './viewportContext';
 
 /* Navbar.jsx */
 const Navbar = () => {
   const [notScrolled, setScrolled] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
-  const [windowWidth, setWidth] = useState(null);
+  const { width } = useContext(viewportContext);
   
   const useOutsideClick = (ref) => {
     useEffect(() => {
@@ -48,16 +49,7 @@ const Navbar = () => {
     }
   });
 
-  const handleWindowSize = () => {
-    setWidth(window.innerWidth)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowSize);
-    return () => window.removeEventListener('resize', handleWindowSize);
-  });
-
-  console.log(windowWidth);
+  console.log(`initial width: ${width}`);
   
     const menu = ['News', 'Bundesliga','Football Organizations','Domestic Club Competitions','Fantasy Leagues','Players']
     const menuItems = menu.map((val, index)=>{
@@ -84,9 +76,9 @@ const Navbar = () => {
         <div className="bod" ref={navref} style={menuOpen ? {filter: 'blur(2px)'} : {filter: 'null'}}>
           <div className="wrapper" style={notScrolled ? {marginLeft: '10%', marginRight: '20%'} : {marginLeft: '0%', marginRight: '0%'}}>
             <div className="logo">
-              <img src="/PFN-black.png" alt="company logo" className="not-scrolled logo-img" />
+              <img src="/PFN-black.png" alt="company logo" className="not-scrolled" />
             </div>
-          {open ? 
+          {/* {open ? 
             <Menu opened >
               {
               open 
@@ -110,13 +102,13 @@ const Navbar = () => {
                 null
               }
             </Menu>
-          } 
+          }  */}
         </div>
       </div>
       :
       <div className="bod" ref={navref} style={menuOpen ? {filter: 'blur(2px)'} : {filter: 'null'}}>
         <div className="wrapper">
-            {windowWidth > 1200 ?
+            {width > 1200 ?
               <div className="flexbox">
                 <div className="col-logo">
                   <div>
@@ -186,7 +178,7 @@ const MenuItem = React.forwardRef((props, ref) => {
     return (
         <div ref={ref} className="menu-item-container" style={{animationDelay: `${props.delay}`}}>
           <div 
-            style={hover ? {color: '#9D9FA2', animationDelay: `${props.delay}`} : {color: '#E32222', animationDelay: `${props.delay}`, textDecoration: "underline"}}
+            style={hover ? {color: '#363839', animationDelay: `${props.delay}`} : {color: '#E32222', animationDelay: `${props.delay}`, textDecoration: "underline"}}
             className="menu-item"
             onMouseEnter={() => setHover(!hover)} 
             onMouseLeave={() => setHover(!hover)}
