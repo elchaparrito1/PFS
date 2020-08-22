@@ -7,6 +7,7 @@ const Navbar = () => {
   const [notScrolled, setScrolled] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
+  const [windowWidth, setWidth] = useState(null);
   
   const useOutsideClick = (ref) => {
     useEffect(() => {
@@ -46,6 +47,17 @@ const Navbar = () => {
       abortController.abort();
     }
   });
+
+  const handleWindowSize = () => {
+    setWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSize);
+    return () => window.removeEventListener('resize', handleWindowSize);
+  });
+
+  console.log(windowWidth);
   
     const menu = ['News', 'Bundesliga','Football Organizations','Domestic Club Competitions','Fantasy Leagues','Players']
     const menuItems = menu.map((val, index)=>{
@@ -70,18 +82,10 @@ const Navbar = () => {
       <>
         {notScrolled ? 
         <div className="bod" ref={navref} style={menuOpen ? {filter: 'blur(2px)'} : {filter: 'null'}}>
-        <div className="wrapper">
-          <div className="main-container">
-            <div className="media-button-container button_slide slide_right"
-                onClick={() => setOpen(!open)}>
-                  <div className="media-button-line line-top" style={open ? {transform: 'translate(4px) rotate(45deg)'} : {transform: 'none'}} />
-                  <div className="media-button-line line-middle" style={open ? {opacity: 0, transform: 'translateX(-16px)'} : {opacity: 1, transform: 'none'}}/>
-                  <div className="media-button-line line-bottom" style={open ? {transform: 'translate(3px) rotate(-45deg)'} : {transform: 'none'}}/>
-            </div>
+          <div className="wrapper" style={notScrolled ? {marginLeft: '10%', marginRight: '20%'} : {marginLeft: '0%', marginRight: '0%'}}>
             <div className="logo">
-              <img src="/pfn_transparent.png" alt="company logo" className=" not-scrolled logo-img" />
+              <img src="/PFN-black.png" alt="company logo" className="not-scrolled logo-img" />
             </div>
-          </div>
           {open ? 
             <Menu opened >
               {
@@ -112,17 +116,36 @@ const Navbar = () => {
       :
       <div className="bod" ref={navref} style={menuOpen ? {filter: 'blur(2px)'} : {filter: 'null'}}>
         <div className="wrapper">
-          <div className="main-container-scroll">
-            <div className="media-button-container-scroll"
-                onClick={() => setOpen(!open)}>
-                  <div className="media-button-line line-top-scroll" style={open ? {transform: 'translate(4px) rotate(45deg)'} : {transform: 'none'}} />
-                  <div className="media-button-line line-middle-scroll" style={open ? {opacity: 0, transform: 'translateX(-16px)'} : {opacity: 1, transform: 'none'}}/>
-                  <div className="media-button-line line-bottom-scroll" style={open ? {transform: 'translate(3px) rotate(-45deg)'} : {transform: 'none'}}/>
+            {windowWidth > 1200 ?
+              <div className="flexbox">
+                <div className="col-logo">
+                  <div>
+                  <img src="/PFN-logo-red.png" alt="company logo" className="scrolled-desktop" />
+                  </div>
+                </div>
+                <div className="col-middle">
+                  <div></div>
+                </div>
+                <div className="col-menu">
+                  <ul style={{listStyleType: "none"}}>
+                    <li>{menuItems}</li>
+                  </ul>
+                </div>
+              </div>
+            :
+            <div className="main-container-scroll">
+              <div className="media-button-container-scroll"
+                  onClick={() => setOpen(!open)}>
+                    <div className="media-button-line line-top-scroll" style={open ? {transform: 'translate(4px) rotate(45deg)'} : {transform: 'none'}} />
+                    <div className="media-button-line line-middle-scroll" style={open ? {opacity: 0, transform: 'translateX(-16px)'} : {opacity: 1, transform: 'none'}}/>
+                    <div className="media-button-line line-bottom-scroll" style={open ? {transform: 'translate(3px) rotate(-45deg)'} : {transform: 'none'}}/>
+              </div>
+              <div style={{margin: "0 auto"}}>
+                <img src="/PFN-white.png" alt="company logo" className="scrolled-not-desktop" />
+              </div>
             </div>
-            <div style={{margin: "0 auto"}}>
-              <img src="/pfn-logo.png" alt="company logo" className="scrolled logo-img" />
-            </div>
-          </div>
+            }
+            
           {open ? 
             <ScrolledMenu opened >
               {
@@ -163,7 +186,7 @@ const MenuItem = React.forwardRef((props, ref) => {
     return (
         <div ref={ref} className="menu-item-container" style={{animationDelay: `${props.delay}`}}>
           <div 
-            style={hover ? {color: 'white', animationDelay: `${props.delay}`} : {color: '#fafafa', animationDelay: `${props.delay}`}}
+            style={hover ? {color: '#9D9FA2', animationDelay: `${props.delay}`} : {color: '#E32222', animationDelay: `${props.delay}`, textDecoration: "underline"}}
             className="menu-item"
             onMouseEnter={() => setHover(!hover)} 
             onMouseLeave={() => setHover(!hover)}

@@ -7,8 +7,8 @@ export default css.global`
     
     body {
       margin: 0;
-      background: #ecf0f3;
-      font-family: 'Do Hyeon', sans-serif;
+      background: #EBECF0;
+      font-family: Inter, sans-serif;
     }
 
     .my-masonry-grid {
@@ -18,6 +18,7 @@ export default css.global`
       margin-left: -30px; 
       width: auto;
     }
+    
     .my-masonry-grid_column {
       padding-left: 30px; /* gutter size */
       background-clip: padding-box;

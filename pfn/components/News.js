@@ -7,71 +7,26 @@ return (
     <>
       <Element name="News">
         <div className="content-div">
-          <div className="title">News</div>
+          <div className="title">Feed-</div>
           <div className="gallery">
             {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
-              <figure className="gallery__item gallery__item--1" key={filteredArticle.id}>
+              <figure className="gallery__item--1" key={filteredArticle.id}>
               <a 
                 target="_blank"
                 rel="noopener noreferrer" 
                 alt={`Link to homepage`} 
-                href={filteredArticle.acf.link} >
+                href={filteredArticle.acf.link} 
+                className="atag">
                     <img src={filteredArticle.acf.image}
                       alt="News feed image" 
                       className="gallery__img"
                     />
+                    <div className='shade' style={{ background: `linear-gradient(0deg, rgba(54, 56, 57, 0.65), rgba(54, 56, 57, 0.65))`}}></div>
                     <p className="headline">{filteredArticle.acf.headline}</p>
               </a>
             </figure>
             ))}
-            {props.data.filter(obj => obj.acf.placement == "Second").map(filteredArticle => (
-            <figure className="gallery__item gallery__item--2" key={filteredArticle.id}>
-              <a 
-                target="_blank"
-                rel="noopener noreferrer" 
-                alt={`Link to homepage`} 
-                href={filteredArticle.acf.link} >
-                    <img src={filteredArticle.acf.image}
-                      alt="News feed image" 
-                      className="gallery__img"
-                    />
-                    <p className="headline">{filteredArticle.acf.headline}</p>
-              </a>
-            </figure>
-            ))}
-            {props.data.filter(obj => obj.acf.placement == "Third").map(filteredArticle => (
-            <figure className="gallery__item gallery__item--3" key={filteredArticle.id}>
-              <a 
-                target="_blank"
-                rel="noopener noreferrer" 
-                alt={`Link to homepage`} 
-                href={filteredArticle.acf.link} >
-                    <img src={filteredArticle.acf.image}
-                      alt="News feed image" 
-                      className="gallery__img"
-                    />
-                    <p className="headline">{filteredArticle.acf.headline}</p>
-              </a>
-            </figure>
-            ))}
-            {props.data.filter(obj => obj.acf.placement == "Fourth").map(filteredArticle => (
-            <figure className="gallery__item gallery__item--4" key={filteredArticle.id}>
-              <a 
-                target="_blank"
-                rel="noopener noreferrer" 
-                alt={`Link to homepage`} 
-                href={filteredArticle.acf.link} >
-                    <img src={filteredArticle.acf.image}
-                      alt="News feed image" 
-                      className="gallery__img"
-                    />
-                    <p className="headline">{filteredArticle.acf.headline}</p>
-              </a>
-            </figure>
-            ))}
-            <figure className="gallery__item gallery__item--feed">
-                <div className="feed">Feed</div>
-              <div className="link-grid-container">
+            <figure className="gallery__item--feed">
               {props.data.filter(obj => obj.acf.placement == "Feed").map((filteredArticle, index) => (
                 <div className="grid-item" key={filteredArticle.id}>
                   <a 
@@ -79,115 +34,75 @@ return (
                     rel="noopener noreferrer" 
                     alt={`Link to homepage`} 
                     href={filteredArticle.acf.link} >
-                      <div className="neumorphic button_slide slide_right">
-                        <button className="variation2" tabIndex="-1">
-                          <span>{filteredArticle.acf.headline}</span>
-                        </button>
-                      </div>
+                          <p className="feed-headline">{filteredArticle.acf.headline}</p>
                   </a>
+                    <p className="feed-info">Date | website</p>
                 </div>
               ))}
-              </div>
+              
             </figure>
           </div>
         </div>
       </Element>
               
       <style jsx>{`
-              span {
-                display: -webkit-box;
-                  -webkit-line-clamp: 3;
-                  -webkit-box-orient: vertical;
-                overflow: hidden;
-              }
-
               .content-div {
+                position: relative;
+                z-index: 50;
                 align-self: start;
                 padding: 30px 30px 30px 30px;
-                border-radius: 6px;
-                background: #ecf0f3;
-                box-shadow: 13px 13px 20px #cbced1,
-                            -13px -13px 20px #ffffff;
+                background: linear-gradient(317.7deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #EBECF0;
+                background-blend-mode: soft-light, normal;
+                box-shadow: -10px -10px 20px #FAFBFF, 10px 10px 20px #A6ABBD;
+                border-radius: 40px;
               }
 
               .title {
-                position: relative;
-                text-align: center;
-                font-size: 20px;
-                letter-spacing: 0.5px;
-                color: gray;
-                padding-bottom: 15px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 32px;
+                line-height: 39px;
+                color: #363839;
+                padding: 40px;
               }
             
               .gallery {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(6, 1fr);
-                grid-gap: 3px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
               }
               
               .gallery__img {
+                position: static;
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 5px;
-                box-shadow: 13px 13px 20px #cbced1,
-                            -13px -13px 20px #ffffff;
+                height: 318px;
+                border-radius: 31.8px;
+              }
+
+              .atag:hover p {
+                color: #E32222;
+              }
+
+              .shade {
+                width: 100%;
+                height: 318px;
+                border-radius: 31.8px;
+                position: absolute;
+                top: 0;
+                left: 0;
               }
 
               .gallery__item--1 {
-                grid-column-start: 1;
-                grid-column-end: 3;
-                grid-row-start: 1;
-                grid-row-end: 4;
-                position: relative;
-              }
-
-              .gallery__item--2 {
-                grid-column-start: 3;
-                grid-column-end: 4;
-                grid-row-start: 1;
-                grid-row-end: 3;
-                position: relative;
-              }
-
-              .gallery__item--3 {
-                grid-column-start: 3;
-                grid-column-end: 4;
-                grid-row-start: 3;
-                grid-row-end: 5;
-                position: relative;
-              }
-
-              .gallery__item--4 {
-                grid-column-start: 3;
-                grid-column-end: 4;
-                grid-row-start: 5;
-                grid-row-end: 7;
                 position: relative;
               }
 
               .gallery__item--feed {
-                grid-column-start: 1;
-                grid-column-end: 3;
-                grid-row-start: 4;
-                grid-row-end: 7;
-                max-height: 500px;
-              
-                border-radius: 5px;
-                transition: all 2s ease-in-out;
+                max-height: 400px;
                 overflow: auto;
                 padding: 15px;
-              }
-
-              .link-grid-container {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(10, 1fr);
-                grid-auto-flow: column;
-                grid-gap: 15px;
-                justify-items: center;
-                align-items: center;
+                display: flex;
+                flex-direction: column;
               }
 
               .feed {
@@ -200,79 +115,57 @@ return (
               }
 
               .grid-item {
-                text-align: center;
-              }  
-
-              .neumorphic {
-                box-shadow: inset 5px 5px 5px #cbced1,
-                            inset -5px -5px 5px #ffffff;
-                width: 250px;
-                height: 50px;
-                border-radius: 5px;
-                overflow: hidden;
-                position: relative;
-              }
-
-              .button_slide {
-                -webkit-transition: ease-out 0.8s;
-                -moz-transition: ease-out 0.8s;
-                transition: ease-out 0.8s;
-              }
-          
-              .slide_right:hover {
-                box-shadow: inset 400px 0 0 0 #014899;
-              }
-          
-              .slide_right:hover .variation2 {
-                color: white;
-                -webkit-transition: ease-out 0.8s;
-                -moz-transition: ease-out 0.8s;
-                transition: ease-out 0.8s;
-              }
-
-              .variation2 {
-                font-family: 'Do Hyeon', sans-serif;
-                color: gray;
-                cursor: pointer;
-                border: none;
-                border-radius: 5px;
-                background-color: transparent;
-                font-size: 0.8rem;
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
+                margin: 10px 0px;
               }
 
               .container {
                 position: relative;
               }
 
-              figure img {
-                vertical-align: middle;
-                transition: all 0.3s ease-in-out 0s;
-                -moz-transition: all 0.3s ease-in-out 0s;
-                -webkit-transition: all 0.3s ease-in-out 0s;
-                -o-transition: all 0.3s ease-in-out 0s;
-              }
-
-              figure:hover img {
-                transform: scale(1.04);
-                -moz-transform: scale(1.04);
-                -webkit-transform: scale(1.04);
-                -o-transform: scale(1.04);
-              }
-
               .headline {
                 position: absolute;
-                top: 60%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: rgba(0, 0, 0, 0.5);
-                padding: 5px;
-                width: 99%;
-                font-size: 1vw;
-                text-overflow: hidden;
-                color: white;
+                height: 52px;
+                left: 32px;
+                right: 125px;
+                top: 224px;
+                font-style: normal;
+                font-weight: 800;
+                font-size: 16px;
+                line-height: 160%;
+                display: flex;
+                align-items: flex-end;
+                letter-spacing: 0.05em;
+                color: #FFFFFF;
+              }
+
+              .headline:hover {
+                color: #E32222;
+              }
+
+              .feed-headline {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;    
+                text-decoration-line: underline;
+                color: #000000;
+                flex: none;
+                order: 0;
+                align-self: left;
+                margin: 10px 0px;
+              }
+
+              .feed-headline:hover {
+                  color: #E32222;
+              }
+
+              .feed-info {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 8px;
+                line-height: 10px;
+                letter-spacing: 0.05em;
+                color: #9D9FA2;
               }
 
               @media only screen and (max-width: 320px) {

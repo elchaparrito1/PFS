@@ -77,8 +77,8 @@ for (const obj of sectionsArrayObject) {
 
 //breakpoints for columns for Masonry package
 const breakpointColumnsObj = {
-  default: 3,
-  1100: 3,
+  default: 2,
+  1100: 2,
   1099: 2,
   630: 2
 };
@@ -87,9 +87,10 @@ const breakpointColumnsObj = {
     <>
       <Head>
         <meta charSet="utf-8"></meta>
-        <title>Pace News</title>
+        <title>Pace Football News</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="/soccer.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet"></link>
+        <link rel="shortcut icon" href="/PFN.svg" />
       </Head>
       <Layout>
         <Navbar />
@@ -108,25 +109,25 @@ const breakpointColumnsObj = {
       <style>{`
         .news-wrapper {
           padding-top: 200px; 
-          margin-left: 3%; 
-          margin-right: 3%;
+          margin-left: 10%; 
+          margin-right: 20%;
         }
 
         .section-wrapper {
           padding-top: 100px; 
-          margin-left: 3%; 
-          margin-right: 3%;
+          margin-left: 10%; 
+          margin-right: 20%;
         }
 
         @media only screen and (min-width: 1500px) {
           .news-wrapper {
-            margin-left: 15%; 
-            margin-right: 15%;
+            margin-left: 10%; 
+            margin-right: 20%;
           }
 
           .section-wrapper {
             margin-left: 10%; 
-            margin-right: 10%;
+            margin-right: 20%;
           }
         }
 

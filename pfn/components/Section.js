@@ -13,108 +13,46 @@ return (
                   rel="noopener noreferrer" 
                   alt={`Link to ${post.acf.title} homepage`} 
                   href={post.acf.url} >
-                  <div className="neumorphic button_slide slide_right">
-                    <button className="variation2" tabIndex="-1">
-                      {post.acf.title}
-                    </button>
-                  </div>
+                      <p className="link-title">{post.acf.title}</p>
                 </a>
         </div>
       ))}
     </Container>
 
-    <style jsx>{`
-            .neumorphic {
-              box-shadow: inset 5px 5px 5px #cbced1,
-                          inset -5px -5px 5px #ffffff;
-              width: 200px;
-              height: 40px;
-              border-radius: 5px;
-              overflow: hidden;
-              position: relative;
-              cursor: pointer;
-            }
-        
-            .variation2 {
-              font-family: 'Do Hyeon', sans-serif;
-              color: gray;
-              cursor: pointer;
-              border: none;
-              border-radius: 5px;
-              background-color: transparent;
-              font-size: 1rem;
-              position: relative;
-              top: 50%;
-              transform: translateY(-50%);
-            }
-        
+    <style jsx>{`        
             .grid-item {
               text-align: center;
+              position: relative;
+              z-index: 50;
             }
-        
-            .button_slide {
-              -webkit-transition: ease-out 0.8s;
-              -moz-transition: ease-out 0.8s;
-              transition: ease-out 0.8s;
+
+            .link-title {
+              font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;    
+                text-decoration-line: underline;
+                color: #000000;
+                flex: none;
+                order: 0;
+                align-self: left;
+                margin: 10px 0px;
             }
-        
-            .slide_right:hover {
-              box-shadow: inset 400px 0 0 0 #014899;
-            }
-        
-            .slide_right:hover .variation2 {
-              color: white;
-              -webkit-transition: ease-out 0.8s;
-              -moz-transition: ease-out 0.8s;
-              transition: ease-out 0.8s;
+
+            .link-title:hover {
+              color: #E32222;
             }
 
             @media only screen and (max-width: 320px) {
-              .neumorphic {
-                width: 100px;
-                height: 40px;
-              }
 
-              .variation2 {
-                font-size: 0.7rem;
-                display: inline-block;
-                vertical-align: middle;
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-              }
             }
 
             @media only screen and (min-width: 321px) and (max-width: 767px) {
-              .neumorphic {
-                width: 130px;
-                height: 40px;
-              }
 
-              .variation2 {
-                font-size: 0.7rem;
-                display: inline-block;
-                vertical-align: middle;
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-              }
             }
 
             @media only screen and (min-width: 768px) and (max-width: 1024px) {
-              .neumorphic {
-                width: 130px;
-                height: 50px;
-              }
 
-              .variation2 {
-                font-size: 0.9rem;
-                display: inline-block;
-                vertical-align: middle;
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-              }
             }
     `}</style> 
   </>

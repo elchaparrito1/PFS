@@ -27,7 +27,7 @@ const Image = (props) => {
     <style jsx>{`
             .content-div {
               align-self: start;
-              border-radius: 10px;
+              border-radius: 40px;
               background: none;
             }
 
@@ -52,7 +52,7 @@ const Image = (props) => {
               width: 100%;
               box-shadow: 13px 13px 20px #cbced1,
                           -13px -13px 20px #ffffff;
-              border-radius: 5px;
+              border-radius: 40px;
             }
     `}</style> 
   </>

@@ -20,22 +20,23 @@ return (
             .content-div {
               align-self: start;
               padding: 60px 35px 35px 35px;
-              border-radius: 5px;
-              background: #ecf0f3;
-              box-shadow: 13px 13px 20px #cbced1,
-                          -13px -13px 20px #ffffff;
               margin: 0 auto;
               margin-bottom: 50px;
-           
+              background: linear-gradient(317.7deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #EBECF0;
+              background-blend-mode: soft-light, normal;
+              box-shadow: -10px -10px 20px #FAFBFF, 10px 10px 20px #A6ABBD;
+              border-radius: 40px;
             }
 
             .title {
-              position: relative;
+              font-family: Inter;
               text-align: center;
-              font-size: 20px;
-              padding: 10px;
-              letter-spacing: 0.5px;
-              color: gray;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 32px;
+              line-height: 30px;
+              color: #363839;
+              padding: 40px;
             }
 
             .fields {

@@ -6,39 +6,36 @@ a {
   position: fixed;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   width: 100vw;
   transition: filter 0.5s ease;
-  z-index: 9000;
+  z-index: 1;
   opacity: 2;
   top: 0;
   left: 0;
   right: 0;
+ 
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  
+  align-items: left;
 }
 
 /*Styling prior to scroll*/
 
-.main-container {
+/* .main-container {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 1;
   opacity: 1;
   display: flex;
-  align-items:center;
-  background: #ecf0f3;
-  box-shadow: 13px 13px 20px #cbced1,
-              -13px -13px 20px #ffffff;
+  align-items: center;
   padding: 10px 15px;
   width: 100%;
-}
+} */
 
 .line-top {
   transform-origin: top left;
@@ -60,57 +57,15 @@ a {
   background: white;
 }
 
-.button_slide {
-  -webkit-transition: ease-out 1s;
-  -moz-transition: ease-out 1s;
-  transition: ease-out 1s;
-}
-
-.slide_right:hover {
-  box-shadow: inset 400px 0 0 0 #014899;
-}
-
-.slide_right:hover .variation2 {
-  color: white;
-  -webkit-transition: ease-out 1s;
-  -moz-transition: ease-out 1s;
-  transition: ease-out 1s;
-}
-
 .padding-top {
   padding-top: 9rem;
 }
 
 .media-button-container {
-  height: 32px;
-  width: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: inset 5px 5px 5px #cbced1,
-  inset -5px -5px 5px #ffffff;
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
+  visibility: hidden;
 }
 
 /*After scroll styling*/
-
-.main-container-scroll {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  opacity: 1;
-  display: flex;
-  align-items:center;
-  background: gray;
-  color: white;
-  padding: 10px 15px;
-  width: 100%;
-}
 
 .line-top-scroll {
   transform-origin: top left;
@@ -132,6 +87,20 @@ a {
   padding-top: 5rem;
 }
 
+.main-container-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1;
+  display: flex;
+  align-items:center;
+  background: gray;
+  color: white;
+  padding: 10px 15px;
+  width: 100%;
+}
+
 .media-button-container-scroll {
   height: 32px;
   width: 32px;
@@ -143,7 +112,6 @@ a {
   border-radius: 5px;
 }
 
-
 .media-button-line {
   height: 2px;
   width: 20px;
@@ -151,19 +119,42 @@ a {
 }
 
 .logo {
-  margin: 0 auto;
-  box-shadow: inset 5px 5px 5px #cbced1,
-  inset -5px -5px 5px #ffffff;
-  padding: 10px;
-  border-radius: 5px;
+  position: relative;
+  padding: 90px 50px 60px 5px;
 }
 
 .not-scrolled {
-    width: 280px;
+    width: 350px;
 }
 
-.scrolled {
-  width: 200px;
+.scrolled-desktop {
+  width: 84px;
+  margin-left: 15%;
+  margin-top: 20%; 
+}
+
+.scrolled-not-desktop {
+  width: 250px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.col-logo {
+  flex: 0 0 120px;
+}
+
+.col-middle {
+  flex: 1 1 auto;
+}
+
+.col-menu {
+  flex: 0 0 250px;
+  position: relative;
+  z-index: 51;
 }
 
 .menu-list {
@@ -176,32 +167,20 @@ a {
 }
 
 .menu-item {
-  font-size: 1.2rem;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: right;
+  text-transform: uppercase;
+  font-style: normal;
   line-height: 20px;
   padding: 1rem 0;
-  margin: 0 5%;
+  margin: 0 10%;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   animation: 0.5s slideIn forwards;
   -moz-transition: all 0.3s ease-in-out 0s;
   -webkit-transition: all 0.3s ease-in-out 0s;
   -o-transition: all 0.3s ease-in-out 0s;
-}
-
-.menu-item:hover {
-  font-size: 1.4rem;
-  transform: scale(2);
-  -moz-transform: scale(2);
-  -webkit-transform: scale(2);
-  -o-transform: scale(2);
-}
-
-.line {
-  width: 90%;
-  height: 1px;
-  background: white;
-  margin: 0 auto;
-  animation: 0.5s shrink forwards;
 }
 
 @keyframes appear {
@@ -245,12 +224,12 @@ a {
     padding-top: 6rem;
   }
 
-  .padding-top-scrolled {
+  .padding-top--desktop {
     padding-top: 5rem;
   }
 
-  .logo-img {
-    width: 150px;
+  .scrolled-not-desktop {
+    width: 84px;
   }
 }
 
@@ -272,9 +251,16 @@ a {
     padding-top: 5rem;
   }
 
-  .logo-img {
-    width: 150px;
+  .logo {
+    position: relative;
+    padding: 65px 50px 60px 0px;
   }
+
+  .scrolled-not-desktop {
+    width: 250px;
+  }
+
+  /*After scroll*/
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -295,7 +281,7 @@ a {
     padding-top: 6rem;
   }
 
-  .logo-img {
+  .scrolled-not-desktop {
     width: 250px;
   }
 }
@@ -311,7 +297,7 @@ a {
     background: black;
   }
   
-  .logo-img {
+  .scrolled-not-desktop {
     width: 150px;
   }
   
@@ -340,7 +326,7 @@ a {
     background: black;
   }
 
-  .logo-img {
+  .scrolled-not-desktop {
     width: 200px;
   }
 
@@ -356,6 +342,12 @@ a {
     line-height: 14px;
     font-size: 1rem;
     padding: 0.7rem 0;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .scrolled-desktop {
+    margin-left: 40%; 
   }
 }
 
