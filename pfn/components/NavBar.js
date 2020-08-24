@@ -51,7 +51,7 @@ const Navbar = () => {
 
   console.log(`initial width: ${width}`);
   
-    const menu = ['News', 'Bundesliga','Football Organizations','Domestic Club Competitions','Fantasy Leagues','Players']
+    const menu = ['News', 'Football News', 'Merch', 'League Table','Football Organizations','Domestic Club Competitions','Fantasy Leagues']
     const menuItems = menu.map((val, index)=>{
       // console.log(typeof `#${val}`);
       return (

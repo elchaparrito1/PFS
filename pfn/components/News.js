@@ -78,6 +78,9 @@ return (
                 width: 100%;
                 height: 318px;
                 border-radius: 31.8px;
+
+                object-fit: cover;
+                object-position: 50% 20%;
               }
 
               .atag:hover p {
