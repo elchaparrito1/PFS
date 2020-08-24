@@ -38,7 +38,7 @@ return (
                     href={filteredArticle.acf.link} >
                           <p className="feed-headline">{filteredArticle.acf.headline}</p>
                   </a>
-                    <p className="feed-info">Date | website</p>
+                    <p className="feed-info">{filteredArticle.acf.date} | {filteredArticle.acf.site}</p>
                 </div>
               ))}
               

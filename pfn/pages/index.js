@@ -35,16 +35,16 @@ const sectionsArrayObject = [
     id: '11'
   },
   {
-    name: 'Image',
-    number: '1'
+    name: 'League Table',
+    id: '19'
   },
   {
-    name: 'Bundesliga',
-    id: '9'
+    name: 'Football News',
+    id: '24'
   },
   {
-    name: 'Image',
-    number: '2'
+    name: 'Merch',
+    id: '21'
   },
   {
     name: 'Domestic Club Competitions',
@@ -55,13 +55,13 @@ const sectionsArrayObject = [
     id: '13'
   },
   {
-    name: 'Image',
-    number: '3'
+    name: 'YouTube Football Channels',
+    id: '23'
   },
-  {
-    name: 'Image',
-    number: '4'
-  },
+  // {
+  //   name: 'Image',
+  //   number: '4'
+  // },
 ]
 
 //Function to filter links into each one's assigned grouping 
