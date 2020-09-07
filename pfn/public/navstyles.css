@@ -83,9 +83,9 @@ a {
   background: white;
 }
 
-.padding-top-scrolled {
+/* .padding-top-scrolled {
   padding-top: 5rem;
-}
+} */
 
 .main-container-scroll {
   position: absolute;
@@ -124,7 +124,7 @@ a {
 }
 
 .not-scrolled {
-    width: 350px;
+    width: 450px;
 }
 
 .scrolled-desktop {
@@ -134,7 +134,7 @@ a {
 }
 
 .scrolled-not-desktop {
-  width: 250px;
+  width: 350px;
 }
 
 .flexbox {
@@ -164,6 +164,7 @@ a {
 .menu-item-container {
   opacity: 0;
   animation: 1s appear forwards;
+  
 }
 
 .menu-item {
@@ -173,7 +174,7 @@ a {
   text-transform: uppercase;
   font-style: normal;
   line-height: 20px;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   margin: 0 10%;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -217,7 +218,7 @@ a {
   }
   
   .not-scrolled {
-      width: 250px;
+    width: 250px;
   }
 
   .media-button-container:hover div:nth-child(n) {
@@ -228,13 +229,23 @@ a {
     padding-top: 6rem;
   }
 
+  .padding-top-scrolled {
+    padding-top: 3.2rem;
+  }
+
   .padding-top--desktop {
     padding-top: 5rem;
   }
 
   .scrolled-not-desktop {
-    width: 180px;
+    width: 200px;
   }
+
+  /* .menu-item {
+    line-height: 14px;
+    font-size: 13px;
+    padding: 0.5rem 0;
+  } */
 }
 
 @media only screen and (min-width: 321px) and (max-width: 767px) {
@@ -252,7 +263,8 @@ a {
   }
 
   .padding-top-scrolled {
-    padding-top: 5rem;
+    padding-top: 3.2rem;
+    
   }
 
   .logo {
@@ -260,11 +272,19 @@ a {
     padding: 65px 50px 60px 0px;
   }
 
+  .not-scrolled {
+    width: 300px;
+  }
+
   .scrolled-not-desktop {
     width: 250px;
   }
 
   /*After scroll*/
+  .menu-item {
+    font-size: 13px;
+    padding: 0.7rem 0;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -286,13 +306,14 @@ a {
   }
 
   .scrolled-not-desktop {
-    width: 250px;
+    width: 350px;
   }
 
   .logo {
     position: relative;
     padding: 60px 50px 60px 5px;
   }
+
 }
 
 @media only screen and (min-width: 321px) and (max-width: 767px) and (orientation: landscape) {
@@ -305,22 +326,12 @@ a {
     background: black;
   }
   
-  .scrolled-not-desktop {
-    width: 200px;
-  }
-  
   .padding-top {
     padding-top: 6rem;
   }
 
   .padding-top-scrolled {
-    padding-top: 5rem;
-  }
-
-  .menu-item {
-    line-height: 14px;
-    font-size: 0.9rem;
-    padding: 0.6rem 0;
+    padding-top: 3.2rem;
   }
 
   .logo {
@@ -344,22 +355,55 @@ a {
     background: black;
   }
 
-  .scrolled-not-desktop {
-    width: 200px;
-  }
-
   .padding-top {
     padding-top: 7rem;
   }
 
   .padding-top-scrolled {
-    padding-top: 5rem;
+    padding-top: 3.2rem;
   }
 
+  .not-scrolled {
+      width: 350px;
+  }
+
+  /* .menu-item {
+    line-height: 14px;
+    font-size: 1rem;
+    padding: 0.4rem 0;
+  } */
+}
+
+/* @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  .menu-item {
+    line-height: 14px;
+    font-size: 1.2rem;
+    padding: 0.9rem 0;
+  }
+} */
+
+/* @media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
   .menu-item {
     line-height: 14px;
     font-size: 1rem;
-    padding: 0.7rem 0;
+    padding: 0.6rem 0;
+  }
+} */
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .menu-item {
+    padding: 0.9rem 0;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .menu-item {
+    font-size: 18px;
+    padding: 1rem 0;
+  }
+
+  .scrolled-not-desktop {
+    width: 450px;
   }
 }
 

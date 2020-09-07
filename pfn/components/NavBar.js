@@ -49,9 +49,12 @@ const Navbar = () => {
     }
   });
 
-  console.log(`initial width: ${width}`);
+  // console.log(`initial width: ${width}`);
   
-    const menu = ['News', 'Football News', 'Merch', 'League Table','Football Organizations','Domestic Club Competitions','Fantasy Leagues']
+    const menu = width > 1200 ? 
+      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', 'English Premier League', 'La Liga', 'Bundesliga', 'Serie A', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings']
+      : 
+      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', 'English Premier League', 'La Liga', 'Bundesliga', 'Serie A', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings'];
     const menuItems = menu.map((val, index)=>{
       // console.log(typeof `#${val}`);
       return (

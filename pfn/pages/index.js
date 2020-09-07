@@ -31,32 +31,108 @@ const Home = ({posts}) => {
 
 const sectionsArrayObject = [
   {
-    name: 'Football Organizations',
-    id: '11'
-  },
-  {
-    name: 'League Table',
+    name: 'Current League Tables',
     id: '19'
   },
   {
-    name: 'Football News',
-    id: '24'
-  },
-  {
-    name: 'Merch',
-    id: '21'
-  },
-  {
-    name: 'Domestic Club Competitions',
-    id: '12'
-  },
-  {
-    name: 'Fantasy Leagues',
-    id: '13'
+    name: 'English Premier League',
+    id: ''
   },
   {
     name: 'YouTube Football Channels',
     id: '23'
+  },
+  {
+    name: 'La Liga',
+    id: ''
+  },
+  {
+    name: 'Football Merch',
+    id: '21'
+  },
+  {
+    name: 'Serie A',
+    id: ''
+  },
+  {
+    name: '2022 FIFA World Cup Qatar News',
+    id: ''
+  },
+  {
+    name: 'Bundesliga',
+    id: ''
+  },
+  {
+    name: 'Fantasy Football/Soccer Leagues',
+    id: '13'
+  },
+  {
+    name: 'France Ligue 1',
+    id: ''
+  },
+  {
+    name: 'FIFA World Rankings',
+    id: ''
+  },
+  {
+    name: 'MLS Soccer',
+    id: ''
+  },
+  {
+    name: 'The Beautiful Game',
+    id: ''
+  },
+  {
+    name: 'Liga MX',
+    id: ''
+  },
+  {
+    name: 'Football Organizations',
+    id: '11'
+  },
+  {
+    name: 'Brasileirão Série A',
+    id: ''
+  },
+  {
+    name: "Women's Leagues",
+    id: ''
+  },
+  {
+    name: 'Eredivisie',
+    id: ''
+  },
+  {
+    name: 'National Team Websites',
+    id: ''
+  },
+  {
+    name: 'Superliga Argentina',
+    id: ''
+  },
+  {
+    name: 'Top World Players',
+    id: ''
+  },
+  {
+    name: 'Ukranian Premier League',
+    id: ''
+  },
+  {
+    name: 'Football Legends',
+    id: ''
+  },
+  {
+    name: 'Turkish Super League',
+    id: ''
+  },
+  {
+    name: 'International Club Competitions',
+    id: ''
+  },
+  {
+    name: 'Domestic Club Competitions',
+    id: '12'
   },
   // {
   //   name: 'Image',

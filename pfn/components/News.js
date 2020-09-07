@@ -9,7 +9,7 @@ return (
     <>
       <Element name="News">
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
-          <div className="title">Feed-</div>
+          <div className="title">Latest News-</div>
           <div className="gallery">
             {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
               <figure className="gallery__item--1" key={filteredArticle.id}>
@@ -179,7 +179,7 @@ return (
                 }
 
                 .title {
-                  font-size: 25px;
+                  font-size: 20px;
                   padding: 30px;
                 }
 
@@ -223,7 +223,7 @@ return (
                 }
 
                 .title {
-                  font-size: 25px;
+                  font-size: 20px;
                   padding: 30px;
                 }
 
@@ -243,7 +243,7 @@ return (
                 }
 
                 .title {
-                  font-size: 25px;
+                  font-size: 20px;
                   padding: 30px;
                 }
               }
@@ -256,6 +256,11 @@ return (
                   grid-gap: 15px;
                   justify-items: center;
                   align-items: center;
+                }
+
+                .title {
+                  font-size: 20px;
+                  padding: 30px;
                 }
 
                 .headline {
