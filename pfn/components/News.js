@@ -17,9 +17,9 @@ return (
                 target="_blank"
                 rel="noopener noreferrer" 
                 alt={`Link to homepage`} 
-                href={filteredArticle.acf.link} 
+                href={filteredArticle.acf.newslink} 
                 className="atag">
-                    <img src={filteredArticle.acf.image}
+                    <img src={filteredArticle.acf.newsimage}
                       alt="News feed image" 
                       className="gallery__img"
                     />
@@ -35,7 +35,7 @@ return (
                     target="_blank"
                     rel="noopener noreferrer" 
                     alt={`Link to homepage`} 
-                    href={filteredArticle.acf.link} >
+                    href={filteredArticle.acf.newslink} >
                           <p className="feed-headline">{filteredArticle.acf.headline}</p>
                   </a>
                     <p className="feed-info">{filteredArticle.acf.date} | {filteredArticle.acf.site}</p>
