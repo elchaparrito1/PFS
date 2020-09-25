@@ -19,7 +19,7 @@ return (
                 alt={`Link to homepage`} 
                 href={filteredArticle.acf.newslink} 
                 className="atag">
-                    <img src={filteredArticle.acf.newsimage}
+                    <img src={filteredArticle.acf.newsimage.url}
                       alt="News feed image" 
                       className="gallery__img"
                     />
