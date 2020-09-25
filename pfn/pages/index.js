@@ -32,27 +32,27 @@ const Home = ({posts}) => {
 const sectionsArrayObject = [
   {
     name: 'Current League Tables',
-    id: '19'
+    id: '1285'
   },
   {
     name: 'English Premier League',
-    id: ''
+    id: '1298'
   },
   {
     name: 'YouTube Football Channels',
-    id: '23'
+    id: '1309'
   },
   {
     name: 'La Liga',
-    id: ''
+    id: '29'
   },
   {
     name: 'Football Merch',
-    id: '21'
+    id: '1286'
   },
   {
     name: 'Serie A',
-    id: ''
+    id: '1299'
   },
   {
     name: '2022 FIFA World Cup Qatar News',
@@ -60,23 +60,23 @@ const sectionsArrayObject = [
   },
   {
     name: 'Bundesliga',
-    id: ''
+    id: '1300'
   },
   {
     name: 'Fantasy Football/Soccer Leagues',
-    id: '13'
+    id: '1288'
   },
   {
     name: 'France Ligue 1',
-    id: ''
+    id: '1301'
   },
   {
     name: 'FIFA World Rankings',
-    id: ''
+    id: '1289'
   },
   {
     name: 'MLS Soccer',
-    id: ''
+    id: '1302'
   },
   {
     name: 'The Beautiful Game',
@@ -84,55 +84,47 @@ const sectionsArrayObject = [
   },
   {
     name: 'Liga MX',
-    id: ''
+    id: '1303'
   },
   {
     name: 'Football Organizations',
-    id: '11'
+    id: '1291'
   },
   {
     name: 'Brasileirão Série A',
-    id: ''
+    id: '1304'
   },
-  {
-    name: "Women's Leagues",
-    id: ''
-  },
+  // {
+  //   name: "Women's Leagues",
+  //   id: ''
+  // },
   {
     name: 'Eredivisie',
-    id: ''
+    id: '1305'
   },
   {
     name: 'National Team Websites',
-    id: ''
+    id: '1293'
   },
   {
     name: 'Superliga Argentina',
-    id: ''
+    id: '1306'
   },
   {
     name: 'Top World Players',
-    id: ''
-  },
-  {
-    name: 'Ukranian Premier League',
-    id: ''
+    id: '1294'
   },
   {
     name: 'Football Legends',
     id: ''
   },
   {
-    name: 'Turkish Super League',
-    id: ''
-  },
-  {
     name: 'International Club Competitions',
-    id: ''
+    id: '1296'
   },
   {
     name: 'Domestic Club Competitions',
-    id: '12'
+    id: '1297'
   },
   // {
   //   name: 'Image',
@@ -155,7 +147,7 @@ const filterImages = (data, val) => {
 }
 
 //Variable containing filter data for top news posts
-const topNews = posts.filter(post => post.categories == '6');
+const topNews = posts.filter(post => post.categories == '1284');
 
 //Sections array that gets JSX partials pushed to it from the filter functions
 const sections = [];
@@ -246,11 +238,7 @@ const breakpointColumnsObj = {
 }
 
 export async function getStaticProps() {
-  const res = process.env.NODE_ENV == 'development' 
-    ? 
-    await fetch('http://nextjs.local/wp-json/wp/v2/posts/?per_page=100')
-    : 
-    await fetch('https://pfn-nextjs.flywheelsites.com/wp-json/wp/v2/posts/?per_page=100');
+  const res = await fetch('https://pacefootballnews.com/wp-json/wp/v2/posts/?per_page=900');
 
   const posts = await res.json();
 
