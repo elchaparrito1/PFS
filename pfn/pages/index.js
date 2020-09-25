@@ -99,20 +99,20 @@ const sectionsArrayObject = [
   //   id: ''
   // },
   {
-    name: 'Eredivisie',
-    id: '1305'
-  },
-  {
     name: 'National Team Websites',
     id: '1293'
   },
   {
-    name: 'Superliga Argentina',
-    id: '1306'
+    name: 'Eredivisie',
+    id: '1305'
   },
   {
     name: 'Top World Players',
     id: '1294'
+  },
+  {
+    name: 'Superliga Argentina',
+    id: '1306'
   },
   {
     name: 'Football Legends',
