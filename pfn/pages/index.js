@@ -56,7 +56,7 @@ const sectionsArrayObject = [
   },
   {
     name: '2022 FIFA World Cup Qatar News',
-    id: ''
+    id: '1287'
   },
   {
     name: 'Bundesliga',
