@@ -252,6 +252,11 @@ const breakpointColumnsObj = {
             margin-right: 20%;
           }
 
+          .news-section-wrapper {
+            margin-left: 10%; 
+            margin-right: 20%;
+          }
+
           .section-wrapper {
             margin-left: 10%; 
             margin-right: 20%;
@@ -261,6 +266,12 @@ const breakpointColumnsObj = {
         @media only screen and (max-width: 1024px) {
           .news-wrapper {
             padding-top: 150px;
+            margin-left: 5%; 
+            margin-right: 5%;
+          }
+
+          .news-section-wrapper {
+            padding-top: 50px;
             margin-left: 5%; 
             margin-right: 5%;
           }
