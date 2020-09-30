@@ -2,43 +2,25 @@ import React, { useContext } from 'react';
 import { Element } from 'react-scroll';
 import viewportContext from './viewportContext';
 
-const TopNews = (props) => {
+const SectionalNews = (props) => {
   const { width } = useContext(viewportContext);
-
 return (
     <>
-      <Element name="News">
+      <Element>
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
-          <div className="title">Latest News-</div>
+          <div className="title">{props.title}-</div>
           <div className="gallery">
-            {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
-              <figure className="gallery__item--1" key={filteredArticle.id}>
-              <a 
-                target="_blank"
-                rel="noopener noreferrer" 
-                alt={`Link to homepage`} 
-                href={filteredArticle.acf.newslink} 
-                className="atag">
-                    <img src={filteredArticle.acf.newsimage.url}
-                      alt="News feed image" 
-                      className="gallery__img"
-                    />
-                    <div className='shade' style={{ background: `linear-gradient(0deg, rgba(54, 56, 57, 0.65), rgba(54, 56, 57, 0.65))`}}></div>
-                    <p className="headline">{filteredArticle.acf.headline}</p>
-              </a>
-            </figure>
-            ))}
             <figure className="gallery__item--feed">
-              {props.data.filter(obj => obj.acf.placement == "Feed").map((filteredArticle, index) => (
-                <div className="grid-item" key={filteredArticle.id}>
+              {props.data.map((post) => (
+                <div className="grid-item" key={post.id}>
                   <a 
                     target="_blank"
                     rel="noopener noreferrer" 
                     alt={`Link to homepage`} 
-                    href={filteredArticle.acf.newslink} >
-                          <p className="feed-headline">{filteredArticle.acf.headline}</p>
+                    href={post.acf.newslink} >
+                          <p className="feed-headline">{post.acf.headline}</p>
                   </a>
-                    <p className="feed-info">{filteredArticle.acf.date} | {filteredArticle.acf.site}</p>
+                    <p className="feed-info">{post.acf.date} | {post.acf.site}</p>
                 </div>
               ))}
               
@@ -64,7 +46,7 @@ return (
                 font-size: 32px;
                 line-height: 39px;
                 color: #363839;
-                padding: 40px;
+                padding: 40px 40px 0 40px;
               }
             
               .gallery {
@@ -72,37 +54,12 @@ return (
                 justify-content: center;
                 flex-direction: column;
               }
-              
-              .gallery__img {
-                position: static;
-                width: 100%;
-                height: 318px;
-                border-radius: 31.8px;
-
-                object-fit: cover;
-                object-position: 50% 20%;
-              }
 
               .atag:hover p {
                 color: #E32222;
               }
 
-              .shade {
-                width: 100%;
-                height: 318px;
-                border-radius: 31.8px;
-                position: absolute;
-                top: 0;
-                left: 0;
-              }
-
-              .gallery__item--1 {
-                position: relative;
-              }
-
               .gallery__item--feed {
-                max-height: 400px;
-                overflow: scroll;
                 padding: 15px;
                 display: flex;
                 flex-direction: column;
@@ -123,26 +80,6 @@ return (
 
               .container {
                 position: relative;
-              }
-
-              .headline {
-                position: absolute;
-                height: 52px;
-                left: 32px;
-                right: 125px;
-                top: 224px;
-                font-style: normal;
-                font-weight: 800;
-                font-size: 16px;
-                line-height: 160%;
-                display: flex;
-                align-items: flex-end;
-                letter-spacing: 0.05em;
-                color: #FFFFFF;
-              }
-
-              .headline:hover {
-                color: #E32222;
               }
 
               .feed-headline {
@@ -182,38 +119,6 @@ return (
                   font-size: 20px;
                   padding: 30px;
                 }
-
-                .headline {
-                  position: absolute;
-                  height: 52px;
-                  left: 45px;
-                  right: 50px;
-                  top: 120px;
-                  font-style: normal;
-                  font-weight: 600;
-                  font-size: 12px;
-                  line-height: 160%;
-                  display: flex;
-                  align-items: flex-end;
-                  letter-spacing: 0.0em;
-                  color: #FFFFFF;
-                }
-
-                .gallery__img {
-                  position: static;
-                  width: 100%;
-                  height: 200px;
-                  border-radius: 31.8px;
-                }
-
-                .shade {
-                  width: 100%;
-                  height: 200px;
-                  border-radius: 31.8px;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                }
               }
 
               //iphone 6s/Pixel
@@ -226,14 +131,6 @@ return (
                   font-size: 20px;
                   padding: 30px;
                 }
-
-                .headline {
-                  left: 40px;
-                  right: 40px;
-                  top: 224px;
-                  font-size: 16px;
-                }
-  
               }
 
               //iphone 5S landscape
@@ -261,22 +158,6 @@ return (
                 .title {
                   font-size: 20px;
                   padding: 30px;
-                }
-
-                .headline {
-                  position: absolute;
-                  height: 52px;
-                  left: 32px;
-                  right: 125px;
-                  top: 224px;
-                  font-style: normal;
-                  font-weight: 800;
-                  font-size: 16px;
-                  line-height: 160%;
-                  display: flex;
-                  align-items: flex-end;
-                  letter-spacing: 0.05em;
-                  color: #FFFFFF;
                 }
 
                 .feed {
@@ -312,4 +193,4 @@ return (
   );
 }
 
-export default TopNews;
+export default SectionalNews;
