@@ -36,101 +36,33 @@ const sectionsArrayObject = [
     id: '1285'
   },
   {
-    name: 'English Premier League',
-    id: '1298'
-  },
-  {
     name: 'YouTube Football Channels',
     id: '1309'
-  },
-  {
-    name: 'La Liga',
-    id: '29'
   },
   {
     name: 'Football Merch',
     id: '1286'
   },
   {
-    name: 'Serie A',
-    id: '1299'
-  },
-  {
     name: '2022 FIFA World Cup Qatar News',
     id: '1287'
-  },
-  {
-    name: 'Bundesliga',
-    id: '1300'
   },
   {
     name: 'Fantasy Football/Soccer Leagues',
     id: '1288'
   },
   {
-    name: 'France Ligue 1',
-    id: '1301'
-  },
-  {
     name: 'FIFA World Rankings',
     id: '1289'
-  },
-  {
-    name: 'MLS Soccer',
-    id: '1302'
   },
   {
     name: 'The Beautiful Game',
     id: '7'
   },
   {
-    name: 'Liga MX',
-    id: '1303'
-  },
-  {
     name: 'Football Organizations',
     id: '1291'
   },
-  {
-    name: 'Brasileirão Série A',
-    id: '1304'
-  },
-  // {
-  //   name: "Women's Leagues",
-  //   id: ''
-  // },
-  {
-    name: 'National Team Websites',
-    id: '1293'
-  },
-  {
-    name: 'Eredivisie',
-    id: '1305'
-  },
-  {
-    name: 'Top World Players',
-    id: '1294'
-  },
-  {
-    name: 'Superliga Argentina',
-    id: '1306'
-  },
-  {
-    name: 'Football Legends',
-    id: '89'
-  },
-  {
-    name: 'International Club Competitions',
-    id: '1296'
-  },
-  {
-    name: 'Domestic Club Competitions',
-    id: '1297'
-  },
-  // {
-  //   name: 'Image',
-  //   number: '4'
-  // },
 ]
 
 //Function to filter links into each one's assigned grouping 
