@@ -44,6 +44,14 @@ const sectionsArrayObject = [
     id: '1286'
   },
   {
+    name: 'Football Talk',
+    id: '1316'
+  },
+  // {
+  //   name: 'Football Podcasts',
+  //   id: ''
+  // },
+  {
     name: '2022 FIFA World Cup Qatar News',
     id: '1287'
   },
@@ -58,10 +66,6 @@ const sectionsArrayObject = [
   {
     name: 'The Beautiful Game',
     id: '7'
-  },
-  {
-    name: 'Football Organizations',
-    id: '1291'
   },
 ]
 
@@ -135,7 +139,7 @@ const breakpointColumnsObj = {
                 <News data={topNews}/>
               </div>
               <div className="news-section-wrapper">
-                <SectionalNews title={'EPL News'} data={epl}/>
+                <SectionalNews title={'English Premier League News'} data={epl}/>
               </div>
               <div className="news-section-wrapper">
                 <SectionalNews title={'La Liga News'} data={liga}/>
@@ -147,7 +151,7 @@ const breakpointColumnsObj = {
                 <SectionalNews title={'Serie A News'} data={serie}/>
               </div>
               <div className="news-section-wrapper">
-                <SectionalNews title={'MLS News'} data={mls}/>
+                <SectionalNews title={'Major League Soccer News'} data={mls}/>
               </div>
               <div className="section-wrapper">
                 <Masonry

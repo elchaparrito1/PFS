@@ -10,26 +10,9 @@ return (
       <Element name="News">
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
           <div className="title">Latest News-</div>
-          <div className="gallery">
-            {props.data.filter(obj => obj.acf.placement == "Main").map(filteredArticle => (
-              <figure className="gallery__item--1" key={filteredArticle.id}>
-              <a 
-                target="_blank"
-                rel="noopener noreferrer" 
-                alt={`Link to homepage`} 
-                href={filteredArticle.acf.newslink} 
-                className="atag">
-                    <img src={filteredArticle.acf.newsimage.url}
-                      alt="News feed image" 
-                      className="gallery__img"
-                    />
-                    <div className='shade' style={{ background: `linear-gradient(0deg, rgba(54, 56, 57, 0.65), rgba(54, 56, 57, 0.65))`}}></div>
-                    <p className="headline">{filteredArticle.acf.headline}</p>
-              </a>
-            </figure>
-            ))}
+          <div className="gallery__item--feed">
             <figure className="gallery__item--feed">
-              {props.data.filter(obj => obj.acf.placement == "Feed").map((filteredArticle, index) => (
+              {props.data.map((filteredArticle, index) => (
                 <div className="grid-item" key={filteredArticle.id}>
                   <a 
                     target="_blank"
@@ -64,7 +47,7 @@ return (
                 font-size: 32px;
                 line-height: 39px;
                 color: #363839;
-                padding: 40px;
+                padding: 40px 40px 0 40px;
               }
             
               .gallery {
@@ -96,13 +79,7 @@ return (
                 left: 0;
               }
 
-              .gallery__item--1 {
-                position: relative;
-              }
-
               .gallery__item--feed {
-                max-height: 400px;
-                overflow: scroll;
                 padding: 15px;
                 display: flex;
                 flex-direction: column;

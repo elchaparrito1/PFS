@@ -52,9 +52,9 @@ const Navbar = () => {
   // console.log(`initial width: ${width}`);
   
     const menu = width > 1200 ? 
-      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings', 'The Beautiful Game', 'Football Organizations']
+      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', 'Football Talk', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings', 'The Beautiful Game']
       : 
-      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings', 'The Beautiful Game', 'Football Organizations'];
+      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', 'Football Talk', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings', 'The Beautiful Game'];
     const menuItems = menu.map((val, index)=>{
       // console.log(typeof `#${val}`);
       return (
