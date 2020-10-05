@@ -220,7 +220,7 @@ const breakpointColumnsObj = {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://pacefootballnews.com/wp-json/wp/v2/posts/?per_page=900');
+  const res = await fetch('https://pace-cms.com/wp-json/wp/v2/posts/?per_page=900');
 
   const posts = await res.json();
 
