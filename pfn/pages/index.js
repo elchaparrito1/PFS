@@ -32,11 +32,11 @@ const Home = ({posts}) => {
 
 const sectionsArrayObject = [
   {
-    name: 'Current League Tables',
+    name: 'League Tables',
     id: '1285'
   },
   {
-    name: 'YouTube Football Channels',
+    name: 'YouTube Channels',
     id: '1309'
   },
   {
@@ -47,16 +47,12 @@ const sectionsArrayObject = [
     name: 'Football Talk',
     id: '1316'
   },
-  // {
-  //   name: 'Football Podcasts',
-  //   id: ''
-  // },
   {
     name: '2022 FIFA World Cup Qatar News',
     id: '1287'
   },
   {
-    name: 'Fantasy Football/Soccer Leagues',
+    name: 'Fantasy Leagues',
     id: '1288'
   },
   {
@@ -139,19 +135,19 @@ const breakpointColumnsObj = {
                 <News data={topNews}/>
               </div>
               <div className="news-section-wrapper">
-                <SectionalNews title={'English Premier League News'} data={epl}/>
+                <SectionalNews title={'English Premier League'} data={epl}/>
               </div>
               <div className="news-section-wrapper">
-                <SectionalNews title={'La Liga News'} data={liga}/>
+                <SectionalNews title={'La Liga'} data={liga}/>
               </div>
               <div className="news-section-wrapper">
-                <SectionalNews title={'Bundesliga News'} data={bund}/>
+                <SectionalNews title={'Bundesliga'} data={bund}/>
               </div>
               <div className="news-section-wrapper">
-                <SectionalNews title={'Serie A News'} data={serie}/>
+                <SectionalNews title={'Serie A'} data={serie}/>
               </div>
               <div className="news-section-wrapper">
-                <SectionalNews title={'Major League Soccer News'} data={mls}/>
+                <SectionalNews title={'Major League Soccer'} data={mls}/>
               </div>
               <div className="section-wrapper">
                 <Masonry
@@ -228,7 +224,7 @@ export async function getStaticProps() {
 
   const posts = await res.json();
 
-  // console.log(posts);
+  // console.log(posts.acf);
 
   return {
     props: {

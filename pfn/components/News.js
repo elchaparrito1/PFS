@@ -7,7 +7,7 @@ const TopNews = (props) => {
 
 return (
     <>
-      <Element name="News">
+      <Element name="Latest News">
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
           <div className="title">Latest News-</div>
           <div className="gallery__item--feed">

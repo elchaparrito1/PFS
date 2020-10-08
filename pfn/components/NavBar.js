@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-scroll';
-import { ScrolledMenu, Menu } from './styled';
+import { ScrolledMenu } from './styled';
 import viewportContext from './viewportContext';
 
 /* Navbar.jsx */
 const Navbar = () => {
   const [notScrolled, setScrolled] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const { width } = useContext(viewportContext);
   
@@ -51,10 +51,23 @@ const Navbar = () => {
 
   // console.log(`initial width: ${width}`);
   
-    const menu = width > 1200 ? 
-      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', 'Football Talk', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings', 'The Beautiful Game']
-      : 
-      ['News', 'Current League Tables', 'YouTube Football Channels', 'Football Merch', 'Football Talk', '2022 FIFA World Cup Qatar News', 'Fantasy Football/Soccer Leagues', 'FIFA World Rankings', 'The Beautiful Game'];
+    const menu = [
+      'Latest News', 
+      'English Premier League', 
+      'La Liga', 
+      'Bundesliga', 
+      'Serie A', 
+      'Major League Soccer', 
+      'League Tables', 
+      'YouTube Channels', 
+      'Football Merch', 
+      'Football Talk', 
+      '2022 FIFA World Cup Qatar News', 
+      'Fantasy Leagues', 
+      'FIFA World Rankings', 
+      'The Beautiful Game'
+    ];
+
     const menuItems = menu.map((val, index)=>{
       // console.log(typeof `#${val}`);
       return (
@@ -67,7 +80,7 @@ const Navbar = () => {
               key={index}>
           <MenuItem 
             delay={`${index * 0.2}s`} 
-            onClick={() => setMenuOpen(false)}>{val}
+            onClick={() => setOpen(false)}>{val}
           </MenuItem>
         </Link>
         )
@@ -76,7 +89,7 @@ const Navbar = () => {
     return(
       <>
         {notScrolled ? 
-        <div className="bod" ref={navref} style={menuOpen ? {filter: 'blur(2px)'} : {filter: 'null'}}>
+        <div className="bod" ref={navref}>
           <div className="wrapper" style={notScrolled ? {marginLeft: '10%', marginRight: '20%'} : {marginLeft: '0%', marginRight: '0%'}}>
             <div className="logo">
               <img src="/PFN-black.png" alt="company logo" className="not-scrolled" />
@@ -109,7 +122,7 @@ const Navbar = () => {
         </div>
       </div>
       :
-      <div className="bod" ref={navref} style={menuOpen ? {filter: 'blur(2px)'} : {filter: 'null'}}>
+      <div className="bod" ref={navref}>
         <div className="wrapper">
             {width > 1200 ?
               <div className="flexbox">

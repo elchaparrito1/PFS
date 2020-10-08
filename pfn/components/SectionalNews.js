@@ -6,7 +6,7 @@ const SectionalNews = (props) => {
   const { width } = useContext(viewportContext);
 return (
     <>
-      <Element>
+      <Element name={props.title}>
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
           <div className="title">{props.title}-</div>
           <div className="gallery">
