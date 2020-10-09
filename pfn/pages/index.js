@@ -61,7 +61,7 @@ const sectionsArrayObject = [
   },
   {
     name: 'The Beautiful Game',
-    id: '7'
+    id: '1290'
   },
 ]
 
