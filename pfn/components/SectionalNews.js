@@ -4,6 +4,9 @@ import viewportContext from './viewportContext';
 
 const SectionalNews = (props) => {
   const { width } = useContext(viewportContext);
+  console.log(props.data.sort((a,b) => new Date(b.modified_gmt) - new Date(a.modified_gmt)).map((obj) => {
+    return obj.modified_gmt;
+  }))
 return (
     <>
       <Element name={props.title}>
@@ -11,7 +14,7 @@ return (
           <div className="title">{props.title}-</div>
           <div className="gallery">
             <figure className="gallery__item--feed">
-              {props.data.map((post) => (
+              {props.data.sort((a,b) => new Date(b.modified_gmt) - new Date(a.modified_gmt)).map((post) => (
                 <div className="grid-item" key={post.id}>
                   <a 
                     target="_blank"
