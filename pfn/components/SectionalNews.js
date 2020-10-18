@@ -4,10 +4,7 @@ import viewportContext from './viewportContext';
 
 const SectionalNews = (props) => {
   const { width } = useContext(viewportContext);
-  console.log(props.data.sort((a,b) => new Date(b.modified_gmt) - new Date(a.modified_gmt)).map((obj) => {
-    return obj.modified_gmt;
-  }))
-return (
+  return (
     <>
       <Element name={props.title}>
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>

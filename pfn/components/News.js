@@ -12,7 +12,7 @@ return (
           <div className="title">Latest News-</div>
           <div className="gallery__item--feed">
             <figure className="gallery__item--feed">
-              {props.data.map((filteredArticle, index) => (
+              {props.data.sort((a,b) => new Date(b.modified_gmt) - new Date(a.modified_gmt)).map((filteredArticle, index) => (
                 <div className="grid-item" key={filteredArticle.id}>
                   <a 
                     target="_blank"
