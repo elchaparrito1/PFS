@@ -36,6 +36,11 @@ const sectionsArrayObject = [
     id: '1285'
   },
   {
+    name: `The Women's Game`,
+    id: '1362'
+
+  },
+  {
     name: 'YouTube Channels',
     id: '1309'
   },
@@ -56,12 +61,12 @@ const sectionsArrayObject = [
     id: '1288'
   },
   {
-    name: 'FIFA World Rankings',
-    id: '1289'
-  },
-  {
     name: 'The Beautiful Game',
     id: '1290'
+  },
+  {
+    name: 'FIFA World Rankings',
+    id: '1289'
   },
 ]
 
