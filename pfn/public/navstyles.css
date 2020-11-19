@@ -14,7 +14,6 @@ a {
   top: 0;
   left: 0;
   right: 0;
- 
 }
 
 .wrapper {
@@ -94,7 +93,7 @@ a {
   z-index: 51;
   opacity: 1;
   display: flex;
-  align-items:center;
+  align-items: center;
   background: gray;
   color: white;
   padding: 10px 15px;
@@ -124,13 +123,13 @@ a {
 }
 
 .not-scrolled {
-    width: 450px;
+  width: 450px;
 }
 
 .scrolled-desktop {
   width: 84px;
   margin-left: 15%;
-  margin-top: 20%; 
+  margin-top: 20%;
 }
 
 .scrolled-not-desktop {
@@ -164,12 +163,11 @@ a {
 .menu-item-container {
   opacity: 0;
   animation: 1s appear forwards;
-  
 }
 
 .menu-item {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   text-align: right;
   text-transform: uppercase;
   font-style: normal;
@@ -216,7 +214,7 @@ a {
     position: relative;
     padding: 70px 20px 20px 10px;
   }
-  
+
   .not-scrolled {
     width: 250px;
   }
@@ -250,8 +248,7 @@ a {
 
 @media only screen and (min-width: 321px) and (max-width: 767px) {
   .slide_right:hover {
-    box-shadow: inset 5px 5px 5px #cbced1,
-    inset -5px -5px 5px #ffffff;
+    box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #ffffff;
   }
 
   .media-button-container:hover div:nth-child(n) {
@@ -264,7 +261,6 @@ a {
 
   .padding-top-scrolled {
     padding-top: 3.2rem;
-    
   }
 
   .logo {
@@ -289,8 +285,7 @@ a {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .slide_right:hover {
-    box-shadow: inset 5px 5px 5px #cbced1,
-    inset -5px -5px 5px #ffffff;
+    box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #ffffff;
   }
 
   .media-button-container:hover div:nth-child(n) {
@@ -313,19 +308,17 @@ a {
     position: relative;
     padding: 60px 50px 60px 5px;
   }
-
 }
 
 @media only screen and (min-width: 321px) and (max-width: 767px) and (orientation: landscape) {
   .slide_right:hover {
-    box-shadow: inset 5px 5px 5px #cbced1,
-    inset -5px -5px 5px #ffffff;
+    box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #ffffff;
   }
 
   .media-button-container:hover div:nth-child(n) {
     background: black;
   }
-  
+
   .padding-top {
     padding-top: 6rem;
   }
@@ -338,17 +331,15 @@ a {
     position: relative;
     padding: 90px 20px 20px 10px;
   }
-  
-  .not-scrolled {
-      width: 250px;
-  }
 
+  .not-scrolled {
+    width: 250px;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .slide_right:hover {
-    box-shadow: inset 5px 5px 5px #cbced1,
-    inset -5px -5px 5px #ffffff;
+    box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px #ffffff;
   }
 
   .media-button-container:hover div:nth-child(n) {
@@ -364,7 +355,7 @@ a {
   }
 
   .not-scrolled {
-      width: 350px;
+    width: 350px;
   }
 
   /* .menu-item {
@@ -409,7 +400,6 @@ a {
 
 @media only screen and (min-width: 1500px) {
   .scrolled-desktop {
-    margin-left: 40%; 
+    margin-left: 40%;
   }
 }
-
