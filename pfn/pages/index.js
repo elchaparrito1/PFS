@@ -4,7 +4,8 @@ import Navbar from '../components/NavBar';
 import Layout from '../components/Layout';
 import Img from '../components/Image';
 import Masonry from 'react-masonry-css';
-import Section from '../components/Section';
+import LinksSection from '../components/LinksSection';
+import SubNewsSection from '../components/SubNewsSection';
 import Head from 'next/head';
 import '../public/navstyles.css';
 import News from '../components/News';
@@ -32,13 +33,16 @@ const Home = ({posts}) => {
 
 const sectionsArrayObject = [
   {
-    name: 'League Tables',
-    id: '1285'
+    name: '2022 FIFA World Cup Qatar News',
+    id: '1287'
   },
   {
-    name: `The Women's Game`,
-    id: '1362'
-
+    name: 'The Beautiful Game',
+    id: '1290'
+  },
+  {
+    name: 'League Tables',
+    id: '1285'
   },
   {
     name: 'YouTube Channels',
@@ -53,16 +57,8 @@ const sectionsArrayObject = [
     id: '1316'
   },
   {
-    name: '2022 FIFA World Cup Qatar News',
-    id: '1287'
-  },
-  {
     name: 'Fantasy Leagues',
     id: '1288'
-  },
-  {
-    name: 'The Beautiful Game',
-    id: '1290'
   },
   {
     name: 'FIFA World Rankings',
@@ -91,15 +87,20 @@ const liga = posts.filter(post => post.categories == '1312');
 const bund = posts.filter(post => post.categories == '1313');
 const serie = posts.filter(post => post.categories == '1314');
 const mls = posts.filter(post => post.categories == '1315');
+const womens = posts.filter(post => post.categories == '1362');
 
 //Sections array that gets JSX partials pushed to it from the filter functions
 const sections = [];
 
 //For/of loop to iterate over array of JSON data, and put data into partial JSX components
 for (const obj of sectionsArrayObject) {
-  {obj.name === 'Image' ? 
-    sections.push(<Img key={obj.number} data={filterImages(posts, obj.number)}/>) : 
-    sections.push(<Section key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
+  // {obj.name === 'Image' ? 
+  //   sections.push(<Img key={obj.number} data={filterImages(posts, obj.number)}/>) : 
+  //   sections.push(<LinksSection key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
+  // }
+  {obj.id === '1287' || obj.id === '1290' ? 
+    sections.push(<SubNewsSection key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>) : 
+    sections.push(<LinksSection key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
   }
 }
 
@@ -153,6 +154,9 @@ const breakpointColumnsObj = {
               </div>
               <div className="news-section-wrapper">
                 <SectionalNews title={'Major League Soccer'} data={mls}/>
+              </div>
+              <div className="news-section-wrapper">
+                <SectionalNews title={`The Women's Game`} data={womens}/>
               </div>
               <div className="section-wrapper">
                 <Masonry

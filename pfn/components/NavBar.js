@@ -58,15 +58,15 @@ const Navbar = () => {
       'Bundesliga', 
       'Serie A', 
       'Major League Soccer', 
-      'League Tables',
       `The Women's Game`, 
+      '2022 FIFA World Cup Qatar News', 
+      'The Beautiful Game',
+      'League Tables',
       'YouTube Channels', 
       'Football Merch', 
       'Football Talk', 
-      '2022 FIFA World Cup Qatar News', 
       'Fantasy Leagues', 
       'FIFA World Rankings', 
-      'The Beautiful Game'
     ];
 
     const menuItems = menu.map((val, index)=>{
