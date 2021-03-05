@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import fetch from 'isomorphic-unfetch';
 import Navbar from '../components/NavBar';
 import Layout from '../components/Layout';
-import Img from '../components/Image';
+// import Img from '../components/Image';
 import Masonry from 'react-masonry-css';
 import LinksSection from '../components/LinksSection';
 import SubNewsSection from '../components/SubNewsSection';
@@ -11,6 +11,7 @@ import '../public/navstyles.css';
 import News from '../components/News';
 import SectionalNews from '../components/SectionalNews';
 import viewportContext from '../components/viewportContext';
+import Scoreboard from '../components/Scoreboard';
 
 
 const Home = ({posts}) => {
@@ -32,21 +33,21 @@ const Home = ({posts}) => {
     }
 
 const sectionsArrayObject = [
-  {
-    name: '2022 FIFA World Cup Qatar News',
-    id: '1287'
-  },
+  // {
+  //   name: '2022 FIFA World Cup Qatar News',
+  //   id: '1287'
+  // },
   {
     name: 'The Beautiful Game',
     id: '1290'
   },
   {
-    name: 'League Tables',
-    id: '1285'
-  },
-  {
     name: 'YouTube Channels',
     id: '1309'
+  },
+  {
+    name: 'League Tables',
+    id: '1285'
   },
   {
     name: 'Football Merch',
@@ -112,6 +113,7 @@ const breakpointColumnsObj = {
   630: 2
 };
 
+
   return (
     <>
       <Head>
@@ -140,6 +142,9 @@ const breakpointColumnsObj = {
               <div className="news-wrapper">
                 <News data={topNews}/>
               </div>
+              {/* <div className="news-section-wrapper">
+                <Scoreboard title={'Scoreboard'} />
+              </div> */}
               <div className="news-section-wrapper">
                 <SectionalNews title={'English Premier League'} data={epl}/>
               </div>
@@ -233,11 +238,20 @@ export async function getStaticProps() {
 
   const posts = await res.json();
 
-  // console.log(posts.acf);
+  // const initialData = await fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2857?timezone=Europe%2FLondon", {
+	//   "method": "GET",
+	//   "headers": {
+	// 	  "x-rapidapi-key": "d9lMOwtA3fmshualI0vfTat9yQtCp12HAVEjsnWb3FWFjDy1j9",
+	// 	  "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+	//   }
+  // })
+
+  // const soccerData = await initialData.json();
 
   return {
     props: {
       posts,
+      // soccerData
     }
   }
 }

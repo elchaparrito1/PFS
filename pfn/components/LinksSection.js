@@ -4,7 +4,6 @@ import viewportContext from './viewportContext';
 
 const Section = (props) => {
   const { width } = useContext(viewportContext);
-  console.log(props.data[0].categories);
   // const newsSections = props.data.filter(obj => obj[0].categories == '1287');
   // console.log(newsSections);
 return (

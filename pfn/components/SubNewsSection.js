@@ -4,7 +4,6 @@ import viewportContext from './viewportContext';
 
 const SubNewsSection = (props) => {
   const { width } = useContext(viewportContext);
-  console.log(props.data);
 return (
   <>
     <Container title={props.title} name={`${props.title.props.children}`} id={`${props.title.props.children}`}>
