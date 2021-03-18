@@ -33,13 +33,13 @@ const Home = ({posts}) => {
     }
 
 const sectionsArrayObject = [
-  // {
-  //   name: '2022 FIFA World Cup Qatar News',
-  //   id: '1287'
-  // },
   {
     name: 'The Beautiful Game',
     id: '1290'
+  },
+  {
+    name: '2022 FIFA World Cup Qatar News',
+    id: '1287'
   },
   {
     name: 'YouTube Channels',
