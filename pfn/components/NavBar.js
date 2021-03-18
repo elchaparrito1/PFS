@@ -59,13 +59,13 @@ const Navbar = () => {
       'Serie A', 
       'Major League Soccer', 
       `The Women's Game`, 
-      '2022 FIFA World Cup Qatar News', 
       'The Beautiful Game',
+      '2022 FIFA World Cup Qatar News', 
       'League Tables',
       'YouTube Channels', 
       'Football Merch', 
-      'Football Talk', 
       'Fantasy Leagues', 
+      'Football Talk', 
       'FIFA World Rankings', 
     ];
 

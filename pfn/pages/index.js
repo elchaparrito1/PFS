@@ -42,24 +42,24 @@ const sectionsArrayObject = [
     id: '1287'
   },
   {
-    name: 'YouTube Channels',
-    id: '1309'
-  },
-  {
     name: 'League Tables',
     id: '1285'
+  },
+  {
+    name: 'YouTube Channels',
+    id: '1309'
   },
   {
     name: 'Football Merch',
     id: '1286'
   },
   {
-    name: 'Football Talk',
-    id: '1316'
-  },
-  {
     name: 'Fantasy Leagues',
     id: '1288'
+  },
+  {
+    name: 'Football Talk',
+    id: '1316'
   },
   {
     name: 'FIFA World Rankings',
