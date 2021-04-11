@@ -145,7 +145,7 @@ const breakpointColumnsObj = {
               {/* <div className="news-section-wrapper">
                 <Scoreboard title={'Scoreboard'} />
               </div> */}
-              <div className="news-section-wrapper">
+              {/* <div className="news-section-wrapper">
                 <SectionalNews title={'English Premier League'} data={epl}/>
               </div>
               <div className="news-section-wrapper">
@@ -170,7 +170,7 @@ const breakpointColumnsObj = {
                   columnClassName="my-masonry-grid_column">
                     {sections}
                 </Masonry>
-              </div>
+              </div> */}
           </Layout>
         </viewportContext.Provider>
       <style>{`

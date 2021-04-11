@@ -9,10 +9,10 @@ return (
     <>
       <Element name="Latest News">
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
-          <div className="title">Latest News-</div>
+          {/* <div className="title">Latest News-</div> */}
           <div className="gallery__item--feed">
             <figure className="gallery__item--feed">
-              {props.data.sort((a,b) => new Date(b.modified_gmt) - new Date(a.modified_gmt)).map((filteredArticle, index) => (
+              {/* {props.data.sort((a,b) => new Date(b.modified_gmt) - new Date(a.modified_gmt)).map((filteredArticle, index) => (
                 <div className="grid-item" key={filteredArticle.id}>
                   <a 
                     target="_blank"
@@ -23,8 +23,8 @@ return (
                   </a>
                     <p className="feed-info">{filteredArticle.acf.date} | {filteredArticle.acf.site}</p>
                 </div>
-              ))}
-              
+              ))} */}
+              <h1>Website is currently down for maintenance</h1>
             </figure>
           </div>
         </div>

@@ -136,9 +136,9 @@ const Navbar = () => {
                   <div></div>
                 </div>
                 <div className="col-menu">
-                  <ul style={{listStyleType: "none"}}>
+                  {/* <ul style={{listStyleType: "none"}}>
                     <li>{menuItems}</li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             :
