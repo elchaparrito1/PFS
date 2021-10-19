@@ -1,57 +1,52 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Element } from 'react-scroll';
 import viewportContext from './viewportContext';
-import { useGetResults } from '../resultsRequest';
+import FixtureSection from './FixtureSection'
 
-const leagues = ['EPL', 'LFP', 'DFL', 'LNPA', 'MLS', 'UCL']
-
-const LEAGUES_PAGES = {
-  EPL: 'EPL',
-  LFP: 'LFP',
-  DFL: 'DFL',
-  LNPA: 'LNPA',
-  MLS: 'MLS',
-  UCL: 'UCL'
-}
-
-const Scoreboard = (props) => {
+const Scoreboard = ({
+  title,
+  eplStuff,
+  ligaStuff,
+  bundeStuff, 
+  serieStuff, 
+  mlsStuff,
+  clStuff
+}) => {
   const { width } = useContext(viewportContext);
-  const {scores, error} = useGetResults();
-  const [league, setLeague] = useState('EPL');
+
+  const leagues = ['EPL', 'LFP', 'DFL', 'LNPA', 'MLS', 'UCL']
+
+  const [league, setLeague] = useState(leagues[0]);
   const [resOrFix, setResOrFix] = useState('Fixtures');
+  const [activeBtn, setActiveBtn] = useState(null)
 
-  const extract = (data) => {
-    var groups = {};
+  const LEAGUE_SCOREBOARD = {
+    EPL: <FixtureSection data={eplStuff[0]} error={eplStuff[1]} />,
+    LFP: <FixtureSection data={ligaStuff[0]} error={ligaStuff[1]} />,
+    DFL: <FixtureSection data={bundeStuff[0]} error={bundeStuff[1]} />,
+    LNPA: <FixtureSection data={serieStuff[0]} error={serieStuff[1]} />,
+    MLS: <FixtureSection data={mlsStuff[0]} error={mlsStuff[1]} />,
+    UCL: <FixtureSection data={clStuff[0]} error={clStuff[1]} />
+  }
 
-    data.forEach(function(val) {
-        var date = val.time.split('T')[0];
-        if (date in groups) {
-            groups[date].push(val.sport);
-        } else {
-            groups[date] = new Array(val.sport);
-        }
-    });
-
-    // console.log(groups);
-    return groups;
-}
-
-  console.log(scores.api.fixtures[0]);
-  // console.log(extract(scores.api.fixtures[0]));
+  const handleClick = (index) => {
+    setActiveBtn(index)
+    setLeague(leagues[index])
+  }
 
   return (
     <>
-      <Element name={props.title}>
+      <Element name={title}>
         <div className="content-div" style={width < 1200 ? {zIndex: "0"} : {zIndex: "50"}}>
-          <div className="title">{props.title}-</div>
+          <div className="title">{title}-</div>
           <ul className="line-navbar">
-            {leagues.map(league => {
+            {leagues.map((league, index) => {
               return (
-                <li key={league}>
+                <li key={index}>
                   <button 
-                    className="league-item"
+                    className={activeBtn === index ? "league-item-active" : "league-item"}
                     name={league}
-                    onClick={() => setLeague(league)}
+                    onClick={() => handleClick(index)}
                   >
                     <strong>{league}</strong>
                   </button>
@@ -83,13 +78,16 @@ const Scoreboard = (props) => {
             </ul>
           <div className="gallery">
             <figure className="gallery__item--feed">
-              {LEAGUES_PAGES[league]}
+            {!eplStuff[0] ? 
+              '...loading' : 
+              LEAGUE_SCOREBOARD[league]
+            }
             </figure>
           </div>
         </div>
       </Element>
               
-      <style jsx>{`
+      <style>{`
               .content-div {
                 position: relative;
                 align-self: start;
@@ -155,6 +153,29 @@ const Scoreboard = (props) => {
                 -webkit-transition: all 0.3s ease-in-out 0s;
                 -o-transition: all 0.3s ease-in-out 0s;
                 color: #363839;
+              }
+
+              .league-item-active {
+                background: transparent;
+                box-shadow: 0px 0px 0px transparent;
+                border: 0px solid transparent;
+                text-shadow: 0px 0px 0px transparent;
+                font-weight: 400;
+                font-size: 16px;
+                text-align: right;
+                text-transform: uppercase;
+                font-style: normal;
+                line-height: 20px;
+                padding: 0.5rem 0;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                animation: 0.5s slideIn forwards;
+                -moz-transition: all 0.3s ease-in-out 0s;
+                -webkit-transition: all 0.3s ease-in-out 0s;
+                -o-transition: all 0.3s ease-in-out 0s;
+                color: #E32222;
+                animation-delay: 2s;
+                text-decoration: underline;
               }
 
               .league-item:hover {
