@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import useSWR from "swr";
 import fetch from 'isomorphic-unfetch';
 import Navbar from '../components/NavBar';
 import Layout from '../components/Layout';
-// import Img from '../components/Image';
 import Masonry from 'react-masonry-css';
 import LinksSection from '../components/LinksSection';
 import SubNewsSection from '../components/SubNewsSection';
@@ -13,9 +13,33 @@ import SectionalNews from '../components/SectionalNews';
 import viewportContext from '../components/viewportContext';
 import Scoreboard from '../components/Scoreboard';
 
+const fetcher = async (url) => {
+  const data = await fetch(
+    url, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": 'haha',
+		  "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+    }
+  })
 
-const Home = ({posts}) => {
+  return data.json()
+}
+
+const url = (leagueId) => {
+  return `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${leagueId}&season=2021`
+ }
+
+const Home = ({
+  posts
+}) => {
     const [width, setWidth] = useState(null);
+    const { data: eplScores, error: eplError } = useSWR(url('39'), fetcher);
+    const { data: ligaScores, error: ligaError } = useSWR(url('140'), fetcher);
+    const { data: bundeScores, error: bundeError } = useSWR(url('78'), fetcher);
+    const { data: serieScores, error: serieError } = useSWR(url('135'), fetcher);
+    const { data: mlsScores, error: mlsError } = useSWR(url('253'), fetcher);
+    const { data: clScores, error: clError } = useSWR(url('2'), fetcher);
   
     const handleWindowResize = () => {
       setWidth(window.innerWidth);
@@ -74,13 +98,6 @@ const filterLinks = (data, val) => {
   return result;
 }
 
-//Function to filter images into each one's assigned section on page 
-// const filterImages = (data, val) => {
-//   let result = data.filter(post => post.categories == '10' && post.acf.number == val.toString());
-  
-//   return result;
-// }
-
 //Variable containing filter data for top news posts
 const topNews = posts.filter(post => post.categories == '1284');
 const epl = posts.filter(post => post.categories == '1311');
@@ -95,10 +112,6 @@ const sections = [];
 
 //For/of loop to iterate over array of JSON data, and put data into partial JSX components
 for (const obj of sectionsArrayObject) {
-  // {obj.name === 'Image' ? 
-  //   sections.push(<Img key={obj.number} data={filterImages(posts, obj.number)}/>) : 
-  //   sections.push(<LinksSection key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
-  // }
   {obj.id === '1287' || obj.id === '1290' ? 
     sections.push(<SubNewsSection key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>) : 
     sections.push(<LinksSection key={obj.id} title={<div className="title">{obj.name}</div>} data={filterLinks(posts, obj.id)}/>)
@@ -142,10 +155,19 @@ const breakpointColumnsObj = {
               <div className="news-wrapper">
                 <News data={topNews}/>
               </div>
-              {/* <div className="news-section-wrapper">
-                <Scoreboard title={'Scoreboard'} />
-              </div> */}
-              {/* <div className="news-section-wrapper">
+              <div className="news-section-wrapper">
+                <Scoreboard 
+                  eplStuff={[eplScores, eplError]}
+                  ligaStuff={[ligaScores, ligaError]} 
+                  bundeStuff={[bundeScores, bundeError]} 
+                  serieStuff={[serieScores, serieError]} 
+                  mlsStuff={[mlsScores, mlsError]} 
+                  clStuff={[clScores, clError]}  
+                  title={'Scoreboard'} 
+
+                />
+              </div> 
+              <div className="news-section-wrapper">
                 <SectionalNews title={'English Premier League'} data={epl}/>
               </div>
               <div className="news-section-wrapper">
@@ -170,7 +192,7 @@ const breakpointColumnsObj = {
                   columnClassName="my-masonry-grid_column">
                     {sections}
                 </Masonry>
-              </div> */}
+              </div>
           </Layout>
         </viewportContext.Provider>
       <style>{`
@@ -238,20 +260,9 @@ export async function getStaticProps() {
 
   const posts = await res.json();
 
-  // const initialData = await fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2857?timezone=Europe%2FLondon", {
-	//   "method": "GET",
-	//   "headers": {
-	// 	  "x-rapidapi-key": "d9lMOwtA3fmshualI0vfTat9yQtCp12HAVEjsnWb3FWFjDy1j9",
-	// 	  "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
-	//   }
-  // })
-
-  // const soccerData = await initialData.json();
-
   return {
     props: {
-      posts,
-      // soccerData
+      posts
     }
   }
 }
